@@ -1,0 +1,21 @@
+.container{
+    background-color: #000000;
+    padding: 20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.nav-link_px-2_text-body-secondary{
+    padding: 0 10px;
+    color: #ffffff;
+}
+.col-md-4_mb-0_text-body-secondary{
+   
+    color: #ffffff;
+}
+.bi_me-2{
+    margin-right: 10px;
+}

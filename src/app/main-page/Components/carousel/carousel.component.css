@@ -1,6 +1,6 @@
 .carousel {
-    width: 100%; /* Ajusta el ancho al 100% del contenedor padre */
-    
+    width: 110%; /* Ajusta el ancho al 100% del contenedor padre */
+    margin-left: -5%;
     height: 600px;
 }
 

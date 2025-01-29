@@ -1,0 +1,80 @@
+.album {
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+}
+
+.container-fluid {
+    padding: 0 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+    
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+}
+
+.bd-placeholder-img {
+    background-color: #2d3035;
+    border-bottom: 3px solid #76b900;
+}
+
+.card-img-top {
+    height: 400px;
+    object-fit: contain;
+    padding: 1.5rem;
+}
+
+.card-body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #495057;
+    margin-bottom: 1.5rem;
+}
+
+.text-body-secondary {
+    font-size: 0.9rem;
+    color: #76b900 !important;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 300px;
+    }
+    
+    .container-fluid {
+        padding: 0 1rem;
+    }
+    
+    .card-body {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card-img-top {
+        height: 250px;
+    }
+    
+    .card-text {
+        font-size: 1rem;
+    }
+}
+
+

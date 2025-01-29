@@ -1,10 +1,12 @@
-.container {
+.container-fluid {
     background-color: #000000;
     padding: 20px;
     margin-top: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
 }
+
 .col-md-4.mb-0.text-body-secondary {
     color: #ffffff; /* Cambia el color a blanco */
 }
@@ -63,7 +65,15 @@
     font-weight: bold;
 }
 
-
 .text-white {
     color: #ffffff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-body-secondary {
+    color: #ffffff !important;
+    font-weight: bold;
 }

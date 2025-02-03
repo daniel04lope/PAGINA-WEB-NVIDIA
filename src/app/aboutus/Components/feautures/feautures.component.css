@@ -1,0 +1,42 @@
+.all {
+    background-color: #1c1c1c; /* Fondo negro suave */
+    color: #ffffff; /* Texto blanco para contraste */
+    padding: 40px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    max-width: 4200px; /* Ancho máximo para centrar el contenido */
+  
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+.feature-icon {
+    background-color: #007bff; /* Color de fondo del icono */
+    border-radius: 50%; /* Icono circular */
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.feature h3 {
+    font-size: 1.5rem; /* Tamaño de fuente para el título */
+    margin-bottom: 15px; /* Espaciado inferior */
+    text-align: center; /* Centra el título */
+}
+
+.feature p {
+    font-size: 1rem; /* Tamaño de fuente para el contenido */
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+    text-align: justify; /* Justifica el texto */
+    margin-bottom: 20px; /* Espaciado inferior */
+}
+
+.feature {
+    padding: 20px; /* Espaciado interno para cada característica */
+    background-color: #2a2a2a; /* Fondo ligeramente más claro para las características */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    margin-bottom: 30px; /* Añade margen inferior para separación entre elementos */
+}

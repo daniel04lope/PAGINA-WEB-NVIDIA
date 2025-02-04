@@ -21,12 +21,14 @@
 }
 
 .feature h3 {
+    color: #ffffff !important ;
     font-size: 1.5rem; /* Tamaño de fuente para el título */
     margin-bottom: 15px; /* Espaciado inferior */
     text-align: center; /* Centra el título */
 }
 
 .feature p {
+    color: #ffffff  ; 
     font-size: 1rem; /* Tamaño de fuente para el contenido */
     line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
     text-align: justify; /* Justifica el texto */
@@ -34,9 +36,13 @@
 }
 
 .feature {
+    color: #ffffff;
     padding: 20px; /* Espaciado interno para cada característica */
     background-color: #2a2a2a; /* Fondo ligeramente más claro para las características */
     border-radius: 10px; /* Bordes redondeados */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
     margin-bottom: 30px; /* Añade margen inferior para separación entre elementos */
+}
+.feature h3{
+  color: #ffffff;
 }

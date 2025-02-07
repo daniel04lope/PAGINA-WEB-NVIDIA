@@ -1,0 +1,26 @@
+/* Contenedor de las noticias */
+.scroll-container {
+    width: 100%;          /* Ocupa todo el ancho de la página */
+    overflow-x: auto;     /* Activa scroll horizontal si hay más de 3 tarjetas */
+    display: flex;        /* Usa flexbox para alinear las tarjetas en fila */
+    flex-wrap: nowrap;    /* Evita que se envuelvan */
+    padding: 10px;        /* Espaciado interno */
+    gap: 20px;            /* Espacio entre tarjetas */
+  }
+  
+  /* Cada tarjeta (noticia) */
+  .scroll-container > .col {
+    flex: 0 0 30%;       /* Cada tarjeta ocupa el 30% del ancho del contenedor */
+    min-width: 300px;    /* Asegura un tamaño mínimo */
+  }
+  
+  /* Estilizar la barra de scroll (opcional) */
+  .scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  

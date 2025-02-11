@@ -1,0 +1,407 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nvidia documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nvidia documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  TeamComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/aboutus/Components/team/team.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-team</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./team.component.html</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">styleUrl</td>
+                <td class="col-md-9"><code>./team.component.css</code></td>
+            </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+
+@Component({
+  // El selector &#x27;app-team&#x27; define el nombre del componente
+  selector: &#x27;app-team&#x27;,
+  
+  // El componente es independiente, no tiene dependencias externas.
+  standalone: true,
+
+  // En esta sección se pueden incluir otros módulos si fueran necesarios, pero aquí está vacío
+  imports: [],
+
+  // Ruta al archivo HTML que contiene la estructura visual de este componente
+  templateUrl: &#x27;./team.component.html&#x27;,
+
+  // Ruta al archivo CSS que contiene los estilos específicos para este componente
+  styleUrl: &#x27;./team.component.css&#x27;
+})
+
+// Definición de la clase TeamComponent que implementa el comportamiento del componente
+export class TeamComponent {
+
+  // Aquí van los métodos y propiedades específicas del componente.
+  // Actualmente no tiene lógica implementada, pero es donde agregarías funcionalidad más tarde.
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container marketing&quot;&gt;
+  &lt;!-- Título de la sección &quot;Nuestro Equipo&quot; --&gt;
+  &lt;h1 id&#x3D;&quot;title&quot;&gt;NUESTRO EQUIPO&lt;/h1&gt;
+  &amp;nbsp;
+  &amp;nbsp;
+
+  &lt;!-- Tres columnas de texto que describen al equipo --&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;!-- Columna para el CEO --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+          &lt;!-- Imagen del CEO con formato redondeado --&gt;
+          &lt;img class&#x3D;&quot;rounded-circle&quot; src&#x3D;&quot;../../../../assets/OIP (3).jpg&quot; alt&#x3D;&quot;Imagen del CEO&quot; width&#x3D;&quot;140&quot; height&#x3D;&quot;140&quot;&gt;
+          &lt;h2&gt;C.E.O&lt;/h2&gt;
+          &lt;!-- Descripción del CEO --&gt;
+          &lt;p&gt;El CEO de nuestra empresa es un líder visionario con una sólida trayectoria en la industria. Con más de 20 años de experiencia, ha demostrado un compromiso inquebrantable con la innovación y la excelencia operativa. Su enfoque estratégico ha sido fundamental para guiar a la empresa hacia el crecimiento sostenible y el éxito en un mercado en constante evolución.&lt;/p&gt;
+      &lt;/div&gt;&lt;!-- /.col-lg-4 --&gt;
+
+      &lt;!-- Columna para el Jefe de Marketing --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+          &lt;!-- Imagen del Jefe de Marketing con formato redondeado --&gt;
+          &lt;img class&#x3D;&quot;rounded-circle&quot; src&#x3D;&quot;../../../../assets/OIP (4).jpg&quot; alt&#x3D;&quot;Imagen del Jefe de Marketing&quot; width&#x3D;&quot;140&quot; height&#x3D;&quot;140&quot;&gt;
+          &lt;h2&gt;JEFE DE MARKETING&lt;/h2&gt;
+          &lt;!-- Descripción del Jefe de Marketing --&gt;
+          &lt;p&gt;El Jefe de Marketing de nuestra empresa es un profesional apasionado y creativo con una amplia experiencia en el desarrollo e implementación de estrategias de marketing efectivas. Con más de 20 años en la industria, ha demostrado su capacidad para impulsar el crecimiento de la marca y aumentar la visibilidad en un mercado competitivo.&lt;/p&gt;
+      &lt;/div&gt;&lt;!-- /.col-lg-4 --&gt;
+
+      &lt;!-- Columna para el Community Manager --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+          &lt;!-- Imagen del Community Manager con formato redondeado --&gt;
+          &lt;img class&#x3D;&quot;rounded-circle&quot; src&#x3D;&quot;../../../../assets/1676590445591.jpg&quot; alt&#x3D;&quot;Imagen del Community Manager&quot; width&#x3D;&quot;140&quot; height&#x3D;&quot;140&quot;&gt;
+          &lt;h2&gt;COMMUNIY MANAGER&lt;/h2&gt;
+          &lt;!-- Descripción del Community Manager --&gt;
+          &lt;p&gt;El Community Manager de nuestra empresa es un apasionado de la comunicación digital y la construcción de comunidades en línea. Con una sólida experiencia en gestión de redes sociales y marketing digital, ha dedicado más de 20 años a conectar marcas con sus audiencias de manera auténtica y efectiva.&lt;/p&gt;
+      &lt;/div&gt;&lt;!-- /.col-lg-4 --&gt;
+  &lt;/div&gt;&lt;!-- /.row --&gt;
+
+  &lt;!-- Segunda fila con más miembros del equipo --&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;!-- Columna para el Gerente de Almacén --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+          &lt;!-- Imagen del Gerente de Almacén con formato redondeado --&gt;
+          &lt;img class&#x3D;&quot;rounded-circle&quot; src&#x3D;&quot;../../../../assets/R (1).jpg&quot; alt&#x3D;&quot;Imagen del Gerente de Almacén&quot; width&#x3D;&quot;140&quot; height&#x3D;&quot;140&quot;&gt;
+          &lt;h2&gt;GERENTE DE ALMACEN&lt;/h2&gt;
+          &lt;!-- Descripción del Gerente de Almacén --&gt;
+          &lt;p&gt;El Gerente de Almacén de nuestra empresa es un profesional altamente organizado y eficiente, con una sólida experiencia en la gestión de operaciones logísticas y de almacenamiento. Con más de 20 años en el sector, ha demostrado su capacidad para optimizar procesos y garantizar un flujo de trabajo fluido en el almacén.&lt;/p&gt;
+      &lt;/div&gt;&lt;!-- /.col-lg-4 --&gt;
+
+      &lt;!-- Columna para el Gerente Financiero --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+          &lt;!-- Imagen del Gerente Financiero con formato redondeado --&gt;
+          &lt;img class&#x3D;&quot;rounded-circle&quot; src&#x3D;&quot;../../../../assets/serious-man-portrait-real-people-high-definition-grey-background-photo.jpg&quot; alt&#x3D;&quot;Imagen del Gerente Financiero&quot; width&#x3D;&quot;140&quot; height&#x3D;&quot;140&quot;&gt;
+          &lt;h2&gt;GERENTE FINANCIERO&lt;/h2&gt;
+          &lt;!-- Descripción del Gerente Financiero --&gt;
+          &lt;p&gt;El Gerente Financiero de nuestra empresa es un profesional altamente calificado y analítico, con una amplia experiencia en la gestión de finanzas corporativas y planificación estratégica. Con más de 20 años en el sector, ha demostrado su capacidad para optimizar recursos y garantizar la salud financiera de la organización.&lt;/p&gt;
+      &lt;/div&gt;&lt;!-- /.col-lg-4 --&gt;
+
+      &lt;!-- Columna para el Conserje --&gt;
+      &lt;div class&#x3D;&quot;col-lg-4&quot;&gt;
+          &lt;!-- Imagen del Conserje con formato redondeado --&gt;
+          &lt;img class&#x3D;&quot;rounded-circle&quot; src&#x3D;&quot;../../../../assets/OIP (5).jpg&quot; alt&#x3D;&quot;Imagen del Conserje&quot; width&#x3D;&quot;140&quot; height&#x3D;&quot;140&quot;&gt;
+          &lt;h2&gt;CONSERJE&lt;/h2&gt;
+          &lt;!-- Descripción del Conserje --&gt;
+          &lt;p&gt;El Conserje de nuestra empresa es un profesional dedicado y atento, responsable de mantener un ambiente limpio, seguro y acogedor para todos los empleados y visitantes. Con una sólida experiencia en el mantenimiento y la gestión de instalaciones, se asegura de que cada rincón de nuestras instalaciones refleje nuestros estándares de calidad y profesionalismo.&lt;/p&gt;
+      &lt;/div&gt;&lt;!-- /.col-lg-4 --&gt;
+  &lt;/div&gt;&lt;!-- /.row --&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container marketing">  <!-- Título de la sección "Nuestro Equipo" -->  <h1 id="title">NUESTRO EQUIPO</h1>  &nbsp;  &nbsp;  <!-- Tres columnas de texto que describen al equipo -->  <div class="row">      <!-- Columna para el CEO -->      <div class="col-lg-4">          <!-- Imagen del CEO con formato redondeado -->          <img class="rounded-circle" src="../../../../assets/OIP (3).jpg" alt="Imagen del CEO" width="140" height="140">          <h2>C.E.O</h2>          <!-- Descripción del CEO -->          <p>El CEO de nuestra empresa es un líder visionario con una sólida trayectoria en la industria. Con más de 20 años de experiencia, ha demostrado un compromiso inquebrantable con la innovación y la excelencia operativa. Su enfoque estratégico ha sido fundamental para guiar a la empresa hacia el crecimiento sostenible y el éxito en un mercado en constante evolución.</p>      </div><!-- /.col-lg-4 -->      <!-- Columna para el Jefe de Marketing -->      <div class="col-lg-4">          <!-- Imagen del Jefe de Marketing con formato redondeado -->          <img class="rounded-circle" src="../../../../assets/OIP (4).jpg" alt="Imagen del Jefe de Marketing" width="140" height="140">          <h2>JEFE DE MARKETING</h2>          <!-- Descripción del Jefe de Marketing -->          <p>El Jefe de Marketing de nuestra empresa es un profesional apasionado y creativo con una amplia experiencia en el desarrollo e implementación de estrategias de marketing efectivas. Con más de 20 años en la industria, ha demostrado su capacidad para impulsar el crecimiento de la marca y aumentar la visibilidad en un mercado competitivo.</p>      </div><!-- /.col-lg-4 -->      <!-- Columna para el Community Manager -->      <div class="col-lg-4">          <!-- Imagen del Community Manager con formato redondeado -->          <img class="rounded-circle" src="../../../../assets/1676590445591.jpg" alt="Imagen del Community Manager" width="140" height="140">          <h2>COMMUNIY MANAGER</h2>          <!-- Descripción del Community Manager -->          <p>El Community Manager de nuestra empresa es un apasionado de la comunicación digital y la construcción de comunidades en línea. Con una sólida experiencia en gestión de redes sociales y marketing digital, ha dedicado más de 20 años a conectar marcas con sus audiencias de manera auténtica y efectiva.</p>      </div><!-- /.col-lg-4 -->  </div><!-- /.row -->  <!-- Segunda fila con más miembros del equipo -->  <div class="row">      <!-- Columna para el Gerente de Almacén -->      <div class="col-lg-4">          <!-- Imagen del Gerente de Almacén con formato redondeado -->          <img class="rounded-circle" src="../../../../assets/R (1).jpg" alt="Imagen del Gerente de Almacén" width="140" height="140">          <h2>GERENTE DE ALMACEN</h2>          <!-- Descripción del Gerente de Almacén -->          <p>El Gerente de Almacén de nuestra empresa es un profesional altamente organizado y eficiente, con una sólida experiencia en la gestión de operaciones logísticas y de almacenamiento. Con más de 20 años en el sector, ha demostrado su capacidad para optimizar procesos y garantizar un flujo de trabajo fluido en el almacén.</p>      </div><!-- /.col-lg-4 -->      <!-- Columna para el Gerente Financiero -->      <div class="col-lg-4">          <!-- Imagen del Gerente Financiero con formato redondeado -->          <img class="rounded-circle" src="../../../../assets/serious-man-portrait-real-people-high-definition-grey-background-photo.jpg" alt="Imagen del Gerente Financiero" width="140" height="140">          <h2>GERENTE FINANCIERO</h2>          <!-- Descripción del Gerente Financiero -->          <p>El Gerente Financiero de nuestra empresa es un profesional altamente calificado y analítico, con una amplia experiencia en la gestión de finanzas corporativas y planificación estratégica. Con más de 20 años en el sector, ha demostrado su capacidad para optimizar recursos y garantizar la salud financiera de la organización.</p>      </div><!-- /.col-lg-4 -->      <!-- Columna para el Conserje -->      <div class="col-lg-4">          <!-- Imagen del Conserje con formato redondeado -->          <img class="rounded-circle" src="../../../../assets/OIP (5).jpg" alt="Imagen del Conserje" width="140" height="140">          <h2>CONSERJE</h2>          <!-- Descripción del Conserje -->          <p>El Conserje de nuestra empresa es un profesional dedicado y atento, responsable de mantener un ambiente limpio, seguro y acogedor para todos los empleados y visitantes. Con una sólida experiencia en el mantenimiento y la gestión de instalaciones, se asegura de que cada rincón de nuestras instalaciones refleje nuestros estándares de calidad y profesionalismo.</p>      </div><!-- /.col-lg-4 -->  </div><!-- /.row --></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AlbunComponent', 'selector': 'app-albun'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FeauturesComponent', 'selector': 'app-feautures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsageComponent', 'selector': 'app-newsage'},{'name': 'NewsCarrouselComponent', 'selector': 'app-news-carrousel'},{'name': 'TeamComponent', 'selector': 'app-team'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'TeamComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'TeamComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

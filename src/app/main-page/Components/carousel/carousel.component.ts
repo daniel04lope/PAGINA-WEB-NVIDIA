@@ -1,5 +1,10 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import * as bootstrap from 'bootstrap';
+
+/**
+ * @file CarouselComponent
+ * @description Componente que controla un carrusel de imágenes utilizando Bootstrap.
+ */
 
 @Component({
   selector: 'app-carousel',
@@ -9,20 +14,28 @@ import * as bootstrap from 'bootstrap';
   styleUrl: './carousel.component.css'
 })
 export class CarouselComponent {
- // Métodos para controlar el carrusel
- next() {
-  const carouselElement = document.getElementById('myCarousel');
-  if (carouselElement) {
-    const carousel = new bootstrap.Carousel(carouselElement);
-    carousel.next();
+  
+  /**
+   * @method next
+   * @description Avanza a la siguiente diapositiva del carrusel.
+   */
+  next() {
+    const carouselElement = document.getElementById('myCarousel');
+    if (carouselElement) {
+      const carousel = new bootstrap.Carousel(carouselElement);
+      carousel.next();
+    }
   }
-}
 
-prev() {
-  const carouselElement = document.getElementById('myCarousel');
-  if (carouselElement) {
-    const carousel = new bootstrap.Carousel(carouselElement);
-    carousel.prev();
+  /**
+   * @method prev
+   * @description Retrocede a la diapositiva anterior del carrusel.
+   */
+  prev() {
+    const carouselElement = document.getElementById('myCarousel');
+    if (carouselElement) {
+      const carousel = new bootstrap.Carousel(carouselElement);
+      carousel.prev();
+    }
   }
-}
 }

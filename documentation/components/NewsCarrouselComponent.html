@@ -1,0 +1,660 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nvidia documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nvidia documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NewsCarrouselComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/news/Components/news-carrousel/news-carrousel.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-news-carrousel</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/AlbunComponent.html" target="_self" >AlbunComponent</a></code>
+                                <code><a href="../components/AlbunComponent.html" target="_self" >AlbunComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./news-carrousel.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./news-carrousel.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, ElementRef, ViewChild } from &#x27;@angular/core&#x27;;
+// Importación del componente AlbunComponent que se usará dentro del carrusel
+import { AlbunComponent } from &quot;../../../main-page/Components/albun/albun.component&quot;;
+
+// Decorador @Component que define las propiedades del componente Angular
+@Component({
+  // selector: Define el nombre del selector HTML que se utilizará para agregar el componente en la plantilla
+  selector: &#x27;app-news-carrousel&#x27;,
+  
+  // standalone: Establece que el componente es autónomo, lo que significa que no requiere un módulo Angular para funcionar
+  standalone: true,
+
+  // imports: Define los componentes o módulos que serán importados y usados dentro de este componente
+  imports: [AlbunComponent, AlbunComponent],
+
+  // templateUrl: Ruta del archivo HTML asociado con el componente
+  templateUrl: &#x27;./news-carrousel.component.html&#x27;,
+
+  // styleUrls: Ruta del archivo CSS que define los estilos para este componente
+  styleUrls: [&#x27;./news-carrousel.component.css&#x27;]
+})
+// Clase que representa el componente NewsCarrousel
+export class NewsCarrouselComponent {
+  // Esta clase podría contener propiedades y métodos relacionados con el comportamiento del carrusel
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- Sección de Últimas Novedades --&gt;
+&lt;h1&gt;ULTIMAS NOVEDADES&lt;/h1&gt;
+&lt;div class&#x3D;&quot;scroll-container&quot;&gt;
+  
+    &lt;!-- Noticia 1: Lanzamiento de nueva GPU de NVIDIA --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de la tarjeta gráfica NVIDIA --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/OIP (6) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            NVIDIA lanza nueva GPU RTX 5090 con rendimiento un 70% superior a la generación anterior.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;9 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 2: Pantallas OLED transparentes de Samsung --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de las pantallas OLED transparentes --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/OIP (7) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Samsung presenta pantallas OLED transparentes para dispositivos móviles.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;12 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 3: Anuncio de Windows 12 --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de la interfaz de Windows 12 --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/1418906 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Microsoft anuncia Windows 12 con integración nativa de IA para 2025.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;15 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 4: PlayStation 6 con carga instantánea --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de PlayStation 6 --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/OIP (8) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            PlayStation 6 revela tecnología de carga instantánea de juegos.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;20 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Sección de Avances Tecnológicos --&gt;
+&lt;h1&gt;AVANCES TECNOLOGICOS&lt;/h1&gt;
+&lt;div class&#x3D;&quot;scroll-container&quot;&gt;
+    &lt;!-- Noticia 1: Ordenador cuántico con más de 1000 qubits --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de un ordenador cuántico --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/OIP (9) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Primer ordenador cuántico comercial supera los 1000 qubits de potencia.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;9 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 2: Baterías de estado sólido para coches eléctricos --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de una batería de estado sólido --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/R (2) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Baterías de estado sólido prometen autonomías de 1500 km para coches eléctricos.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;12 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 3: Diagnóstico médico con IA --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen relacionada con la IA y diagnóstico --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/OIP (10) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            IA logra diagnóstico médico con 99% de precisión en pruebas clínicas.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;15 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 4: Nanorobots médicos para destruir células cancerígenas --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de nanorobots médicos --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/OIP (11) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Nanorobots médicos capaces de destruir células cancerígenas en pruebas in vivo.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;20 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Sección de Otras Noticias de Interés --&gt;
+&lt;h1&gt;OTRAS NOTICIAS DE INTERES&lt;/h1&gt;
+&lt;div class&#x3D;&quot;scroll-container&quot;&gt;
+    &lt;!-- Noticia 1: Ciberataque global a redes bancarias --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen relacionada con ciberataques --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/R (3) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Ciberataque global afecta a redes bancarias: recomendaciones de seguridad.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;9 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 2: Tesla y auto volador --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen del auto volador de Tesla --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/R (4) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Tesla presenta nuevo modelo de auto volador con autonomía de 500 km.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;12 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 3: Carga inalámbrica a distancia de Apple --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de carga inalámbrica --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/OIP (12) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Apple desarrolla tecnología de carga inalámbrica a distancia hasta 5 metros.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;15 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  
+    &lt;!-- Noticia 4: Starlink con cobertura global --&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
+        &lt;!-- Imagen de Starlink --&gt;
+        &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; 
+             xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; 
+             preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
+          &lt;image href&#x3D;&quot;../../../../assets/OIP (13) 1.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; 
+                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
+        &lt;/svg&gt;
+        &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;p class&#x3D;&quot;card-text&quot;&gt;
+            Starlink alcanza cobertura global de internet satelital de alta velocidad.
+          &lt;/p&gt;
+          &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;20 mins&lt;/small&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./news-carrousel.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Contenedor de las noticias */
+.scroll-container {
+    width: 100%;          /* Ocupa todo el ancho de la página */
+    overflow-x: auto;     /* Activa scroll horizontal si hay más de 3 tarjetas */
+    display: flex;        /* Usa flexbox para alinear las tarjetas en fila */
+    flex-wrap: nowrap;    /* Evita que se envuelvan */
+    padding: 10px;        /* Espaciado interno */
+    gap: 20px;            /* Espacio entre tarjetas */
+  }
+  
+  /* Cada tarjeta (noticia) */
+  .scroll-container &gt; .col {
+    flex: 0 0 30%;       /* Cada tarjeta ocupa el 30% del ancho del contenedor */
+    min-width: 300px;    /* Asegura un tamaño mínimo */
+  }
+  
+  /* Estilizar la barra de scroll (opcional) */
+  .scroll-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+  h1{
+    text-align: center;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- Sección de Últimas Novedades --><h1>ULTIMAS NOVEDADES</h1><div class="scroll-container">      <!-- Noticia 1: Lanzamiento de nueva GPU de NVIDIA -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de la tarjeta gráfica NVIDIA -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/OIP (6) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            NVIDIA lanza nueva GPU RTX 5090 con rendimiento un 70% superior a la generación anterior.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">9 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 2: Pantallas OLED transparentes de Samsung -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de las pantallas OLED transparentes -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/OIP (7) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Samsung presenta pantallas OLED transparentes para dispositivos móviles.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">12 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 3: Anuncio de Windows 12 -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de la interfaz de Windows 12 -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/1418906 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Microsoft anuncia Windows 12 con integración nativa de IA para 2025.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">15 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 4: PlayStation 6 con carga instantánea -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de PlayStation 6 -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/OIP (8) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            PlayStation 6 revela tecnología de carga instantánea de juegos.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">20 mins</small>          </div>        </div>      </div>    </div></div><!-- Sección de Avances Tecnológicos --><h1>AVANCES TECNOLOGICOS</h1><div class="scroll-container">    <!-- Noticia 1: Ordenador cuántico con más de 1000 qubits -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de un ordenador cuántico -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/OIP (9) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Primer ordenador cuántico comercial supera los 1000 qubits de potencia.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">9 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 2: Baterías de estado sólido para coches eléctricos -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de una batería de estado sólido -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/R (2) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Baterías de estado sólido prometen autonomías de 1500 km para coches eléctricos.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">12 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 3: Diagnóstico médico con IA -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen relacionada con la IA y diagnóstico -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/OIP (10) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            IA logra diagnóstico médico con 99% de precisión en pruebas clínicas.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">15 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 4: Nanorobots médicos para destruir células cancerígenas -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de nanorobots médicos -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/OIP (11) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Nanorobots médicos capaces de destruir células cancerígenas en pruebas in vivo.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">20 mins</small>          </div>        </div>      </div>    </div></div><!-- Sección de Otras Noticias de Interés --><h1>OTRAS NOTICIAS DE INTERES</h1><div class="scroll-container">    <!-- Noticia 1: Ciberataque global a redes bancarias -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen relacionada con ciberataques -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/R (3) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Ciberataque global afecta a redes bancarias: recomendaciones de seguridad.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">9 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 2: Tesla y auto volador -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen del auto volador de Tesla -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/R (4) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Tesla presenta nuevo modelo de auto volador con autonomía de 500 km.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">12 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 3: Carga inalámbrica a distancia de Apple -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de carga inalámbrica -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/OIP (12) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Apple desarrolla tecnología de carga inalámbrica a distancia hasta 5 metros.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">15 mins</small>          </div>        </div>      </div>    </div>      <!-- Noticia 4: Starlink con cobertura global -->    <div class="col">      <div class="card shadow-lg h-100">        <!-- Imagen de Starlink -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Tarjeta gráfica NVIDIA"              preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"/>          <image href="../../../../assets/OIP (13) 1.svg" width="100%" height="100%"                  preserveAspectRatio="xMidYMid slice"/>        </svg>        <div class="card-body">          <p class="card-text">            Starlink alcanza cobertura global de internet satelital de alta velocidad.          </p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">20 mins</small>          </div>        </div>      </div>    </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AlbunComponent', 'selector': 'app-albun'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FeauturesComponent', 'selector': 'app-feautures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsageComponent', 'selector': 'app-newsage'},{'name': 'NewsCarrouselComponent', 'selector': 'app-news-carrousel'},{'name': 'TeamComponent', 'selector': 'app-team'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NewsCarrouselComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewsCarrouselComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

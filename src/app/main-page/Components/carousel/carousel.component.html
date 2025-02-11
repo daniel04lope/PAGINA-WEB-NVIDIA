@@ -1,56 +1,90 @@
+<!--
+  @file Carousel
+  @description Componente visual de carrusel para mostrar diferentes diapositivas con imágenes y textos promocionales.
+-->
+
 <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
-      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
-            <image href="../../../../assets/untitled.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
-        </svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h1>SACA EL MAXIMO RENDIMIENTO.</h1>
-            <p class="opacity-75">Disfruta de nuestra nueva serie de graficas y saca el maximo rendimiento</p>
-           
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
-            <image href="../../../../assets/nvidiaai.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
-        </svg>
-        <div class="container">
-          <div class="carousel-caption">
-            <h1>DEJA QUE LA IA LO HAGA POR TI</h1>
-            <p>No pierdas el tiempo con tareas repetitivas, deja que la IA lo haga por ti</p>
-           
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
-            <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
-            <image href="../../../../assets/nvidiadlss.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
-        </svg>
-        <div class="container">
-          <div class="carousel-caption text-end">
-            <h1>MEJORA EL RENDIMIENTO CON IA</h1>
-            <p>Disfruta de la maxima calidad y un gran rendimiento</p>
-          
-          </div>
-        </div>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" (click)="prev()">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" (click)="next()">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden ">Next</span>
-    </button>
+  
+  <!--
+    @section Indicadores
+    @description Botones de navegación para seleccionar una diapositiva específica dentro del carrusel.
+  -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
+
+  <!--
+    @section Contenido del Carrusel
+    @description Contenedor de las diapositivas con imágenes y descripciones.
+  -->
+  <div class="carousel-inner">
+    
+    <!--
+      @slide 1
+      @description Primera diapositiva promocionando el máximo rendimiento de las tarjetas gráficas.
+    -->
+    <div class="carousel-item active">
+      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+        <image href="../../../../assets/untitled.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+      </svg>
+      <div class="container">
+        <div class="carousel-caption text-start">
+          <h1>SACA EL MÁXIMO RENDIMIENTO.</h1>
+          <p class="opacity-75">Disfruta de nuestra nueva serie de gráficas y saca el máximo rendimiento.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      @slide 2
+      @description Segunda diapositiva enfocada en inteligencia artificial.
+    -->
+    <div class="carousel-item">
+      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+        <image href="../../../../assets/nvidiaai.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+      </svg>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>DEJA QUE LA IA LO HAGA POR TI</h1>
+          <p>No pierdas el tiempo con tareas repetitivas, deja que la IA lo haga por ti.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      @slide 3
+      @description Tercera diapositiva sobre la tecnología DLSS y su mejora en rendimiento.
+    -->
+    <div class="carousel-item">
+      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false">
+        <rect width="100%" height="100%" fill="var(--bs-secondary-color)"></rect>
+        <image href="../../../../assets/nvidiadlss.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+      </svg>
+      <div class="container">
+        <div class="carousel-caption text-end">
+          <h1>MEJORA EL RENDIMIENTO CON IA</h1>
+          <p>Disfruta de la máxima calidad y un gran rendimiento.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!--
+    @section Controles del Carrusel
+    @description Botones para navegar entre las diapositivas.
+  -->
+  <button class="carousel-control-prev" type="button" (click)="prev()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" (click)="next()">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+
+</div>

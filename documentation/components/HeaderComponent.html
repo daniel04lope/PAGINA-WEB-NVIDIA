@@ -124,6 +124,13 @@
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Incluye un campo de búsqueda que se muestra únicamente cuando la ruta actual es &#39;/news&#39;.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">&lt;app-header&gt;&lt;/app-header&gt;</code></pre></div>
+    </p>
 
 
 
@@ -203,6 +210,20 @@
                     </td>
                 </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#onSearch" >onSearch</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
 
 
@@ -218,17 +239,19 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(router: Router)</code>
+<code>constructor(router: Router, searchService: <a href="../injectables/SearchService.html" target="_self">SearchService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/main-page/Components/header/header.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/main-page/Components/header/header.component.ts:26</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>Constructor del componente.</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -254,7 +277,25 @@
                                                     
                                                         <td>
                                                                 <ul>
-<li>Servicio de Angular para manejar la navegación entre rutas.</li>
+<li>Servicio de Angular para gestionar la navegación y detectar cambios en la URL.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>searchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SearchService.html" target="_self" >SearchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>Servicio encargado de gestionar y actualizar la consulta de búsqueda.</li>
 </ul>
 
                                                         </td>
@@ -272,7 +313,88 @@
 
 
 
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearch"></a>
+                    <span class="name">
+                        <span ><b>onSearch</b></span>
+                        <a href="#onSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearch(event: Event)</code>
+                </td>
+            </tr>
 
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="46"
+                                    class="link-to-prism">src/app/main-page/Components/header/header.component.ts:46</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Método que se invoca en cada cambio del input de búsqueda.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                        <code>Event</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Evento emitido por el input, que contiene el valor de la búsqueda.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
     <section data-compodoc="block-properties">
     
     <h3 id="inputs">
@@ -302,17 +424,10 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/main-page/Components/header/header.component.ts:24</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/main-page/Components/header/header.component.ts:26</a></div>
                         </td>
                     </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Controla la visibilidad de la barra de búsqueda.
-Se activa solo cuando la ruta actual es &quot;/news&quot;.</p>
-</div>
-                </td>
-            </tr>
 
         </tbody>
     </table>
@@ -325,12 +440,16 @@ Se activa solo cuando la ruta actual es &quot;/news&quot;.</p>
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { CommonModule } from &#x27;@angular/common&#x27;;
 import { Component } from &#x27;@angular/core&#x27;;
 import { Router } from &#x27;@angular/router&#x27;;
+import { SearchService } from &#x27;../../../news/Services/search-service.service&#x27;;
 
 /**
- * @file HeaderComponent
- * @description Componente que representa la cabecera de la aplicación, incluyendo navegación y búsqueda condicional.
+ * @component HeaderComponent
+ * @description Componente encargado de mostrar el encabezado de la aplicación.
+ * Incluye un campo de búsqueda que se muestra únicamente cuando la ruta actual es &#x27;/news&#x27;.
+ *
+ * @example
+ * &lt;app-header&gt;&lt;/app-header&gt;
  */
-
 @Component({
   selector: &#x27;app-header&#x27;,
   standalone: true,
@@ -339,25 +458,33 @@ import { Router } from &#x27;@angular/router&#x27;;
   imports: [CommonModule]
 })
 export class HeaderComponent {
-  
   /**
-   * Controla la visibilidad de la barra de búsqueda.
-   * Se activa solo cuando la ruta actual es &quot;/news&quot;.
-   * @type {boolean}
+   * @property showSearch
+   * @description Indica si se debe mostrar el campo de búsqueda en el encabezado.
    */
   showSearch: boolean &#x3D; false;
 
   /**
-   * @constructor
-   * @param {Router} router - Servicio de Angular para manejar la navegación entre rutas.
+   * Constructor del componente.
+   *
+   * @param router - Servicio de Angular para gestionar la navegación y detectar cambios en la URL.
+   * @param searchService - Servicio encargado de gestionar y actualizar la consulta de búsqueda.
    */
-  constructor(private router: Router) {
-    /**
-     * Suscripción a los eventos de navegación para mostrar u ocultar la barra de búsqueda.
-     */
+  constructor(private router: Router, private searchService: SearchService) {
+    // Se suscribe a los eventos de navegación para actualizar la visibilidad del campo de búsqueda.
     this.router.events.subscribe(() &#x3D;&gt; {
       this.showSearch &#x3D; this.router.url &#x3D;&#x3D;&#x3D; &#x27;/news&#x27;;
     });
+  }
+
+  /**
+   * Método que se invoca en cada cambio del input de búsqueda.
+   *
+   * @param event - Evento emitido por el input, que contiene el valor de la búsqueda.
+   */
+  onSearch(event: Event): void {
+    const query &#x3D; (event.target as HTMLInputElement).value;
+    this.searchService.updateSearchQuery(query);
   }
 }
 </code></pre>
@@ -403,8 +530,16 @@ export class HeaderComponent {
     @property {boolean} showSearch - Controla la visibilidad del input de búsqueda.
   --&gt;
   &lt;form class&#x3D;&quot;col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3&quot; role&#x3D;&quot;search&quot; *ngIf&#x3D;&quot;showSearch&quot;&gt;
-    &lt;input type&#x3D;&quot;search&quot; class&#x3D;&quot;form-control form-control-dark text-bg-dark&quot; id&#x3D;&quot;busqueda&quot; placeholder&#x3D;&quot;Buscar...&quot; aria-label&#x3D;&quot;Search&quot;&gt;
+    &lt;input
+  type&#x3D;&quot;search&quot;
+  class&#x3D;&quot;form-control form-control-dark text-bg-dark&quot;
+  id&#x3D;&quot;busqueda&quot;
+  placeholder&#x3D;&quot;Buscar...&quot;
+  aria-label&#x3D;&quot;Search&quot;
+  (input)&#x3D;&quot;onSearch($event)&quot; /&gt;
+
   &lt;/form&gt;
+  
 
   &lt;!--
     @section Botones de usuario
@@ -473,7 +608,7 @@ export class HeaderComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--  @file Cabecera del sitio web con navegación y búsqueda.  @description Este componente representa la barra de navegación principal de la aplicación.--><div id="cabecera" class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">  <!--    @section Logo    @description Contenedor del logo de la aplicación, con enlace a la página de inicio.  -->  <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">      <!--         @description Uso del logo de Nvidia almacenado en assets       -->      <use xlink:href="assets/Nvidia.svg"></use>      <image href="../../../../assets/Nvidia.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />    </svg>  </a>  <!--    @section Navegación    @description Lista de enlaces para navegar entre las diferentes secciones del sitio.  -->  <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">    <li><a href="/home" class="nav-link px-2 text-secondary">Inicio</a></li>    <li><a href="/news" class="nav-link px-2 text-white">Noticias</a></li>    <li><a href="#" class="nav-link px-2 text-white">Soporte</a></li>    <li><a href="#" class="nav-link px-2 text-white">Descargas</a></li>    <li><a href="/about" class="nav-link px-2 text-white">Acerca de nosotros</a></li>  </ul>  <!--    @section Barra de búsqueda    @description Campo de búsqueda que se muestra si la variable showSearch es verdadera.    @property {boolean} showSearch - Controla la visibilidad del input de búsqueda.  -->  <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" *ngIf="showSearch">    <input type="search" class="form-control form-control-dark text-bg-dark" id="busqueda" placeholder="Buscar..." aria-label="Search">  </form>  <!--    @section Botones de usuario    @description Espacio reservado para botones de autenticación u opciones de usuario.  -->  <div class="text-end">    <!-- Botones de usuario pueden ir aquí -->  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><!--  @file Cabecera del sitio web con navegación y búsqueda.  @description Este componente representa la barra de navegación principal de la aplicación.--><div id="cabecera" class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">  <!--    @section Logo    @description Contenedor del logo de la aplicación, con enlace a la página de inicio.  -->  <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">      <!--         @description Uso del logo de Nvidia almacenado en assets       -->      <use xlink:href="assets/Nvidia.svg"></use>      <image href="../../../../assets/Nvidia.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />    </svg>  </a>  <!--    @section Navegación    @description Lista de enlaces para navegar entre las diferentes secciones del sitio.  -->  <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">    <li><a href="/home" class="nav-link px-2 text-secondary">Inicio</a></li>    <li><a href="/news" class="nav-link px-2 text-white">Noticias</a></li>    <li><a href="#" class="nav-link px-2 text-white">Soporte</a></li>    <li><a href="#" class="nav-link px-2 text-white">Descargas</a></li>    <li><a href="/about" class="nav-link px-2 text-white">Acerca de nosotros</a></li>  </ul>  <!--    @section Barra de búsqueda    @description Campo de búsqueda que se muestra si la variable showSearch es verdadera.    @property {boolean} showSearch - Controla la visibilidad del input de búsqueda.  -->  <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" *ngIf="showSearch">    <input  type="search"  class="form-control form-control-dark text-bg-dark"  id="busqueda"  placeholder="Buscar..."  aria-label="Search"  (input)="onSearch($event)" />  </form>    <!--    @section Botones de usuario    @description Espacio reservado para botones de autenticación u opciones de usuario.  -->  <div class="text-end">    <!-- Botones de usuario pueden ir aquí -->  </div></div></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AlbunComponent', 'selector': 'app-albun'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FeauturesComponent', 'selector': 'app-feautures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsageComponent', 'selector': 'app-newsage'},{'name': 'NewsCarrouselComponent', 'selector': 'app-news-carrousel'},{'name': 'TeamComponent', 'selector': 'app-team'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'HeaderComponent'};

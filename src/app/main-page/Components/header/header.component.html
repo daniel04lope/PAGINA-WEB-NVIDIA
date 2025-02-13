@@ -37,8 +37,16 @@
     @property {boolean} showSearch - Controla la visibilidad del input de búsqueda.
   -->
   <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search" *ngIf="showSearch">
-    <input type="search" class="form-control form-control-dark text-bg-dark" id="busqueda" placeholder="Buscar..." aria-label="Search">
+    <input
+  type="search"
+  class="form-control form-control-dark text-bg-dark"
+  id="busqueda"
+  placeholder="Buscar..."
+  aria-label="Search"
+  (input)="onSearch($event)" />
+
   </form>
+  
 
   <!--
     @section Botones de usuario

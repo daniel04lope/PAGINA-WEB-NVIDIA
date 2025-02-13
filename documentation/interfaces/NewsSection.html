@@ -1,0 +1,517 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nvidia documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nvidia documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Interfaces</li>
+  <li class="breadcrumb-item"
+  >
+  NewsSection</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/news/Components/news-carrousel/news-carrousel.component.ts</code>
+        </p>
+
+
+
+
+        <section data-compodoc="block-index">
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#items" 
+>
+                                            items
+                                        </a>
+                                </li>
+                                <li>
+                                        <a href="#title" 
+>
+                                            title
+                                        </a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section data-compodoc="block-properties">
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="items"></a>
+                                        <span class="name "><b>items</b>
+                                            <a href="#items">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>items:         <code><a href="../interfaces/NewsItem.html" target="_self" >NewsItem[]</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="../interfaces/NewsItem.html" target="_self" >NewsItem[]</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Lista de elementos (noticias) pertenecientes a la sección.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="title"></a>
+                                        <span class="name "><b>title</b>
+                                            <a href="#title">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>title:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Título de la sección de noticias.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;; // Importa CommonModule para utilizar directivas comunes de Angular
+import { Subscription } from &#x27;rxjs&#x27;;
+import { SearchService } from &#x27;../../Services/search-service.service&#x27;;
+import { AlbunComponent } from &#x27;../../../main-page/Components/albun/albun.component&#x27;;
+
+/**
+ * @interface NewsItem
+ * @description Representa un elemento individual de noticia.
+ */
+interface NewsItem {
+  /** Descripción de la noticia. */
+  description: string;
+  /** URL de la imagen asociada a la noticia. */
+  imageUrl: string;
+  /** Tiempo transcurrido desde la publicación de la noticia. */
+  time: string;
+}
+
+/**
+ * @interface NewsSection
+ * @description Representa una sección de noticias que contiene un título y una lista de elementos.
+ */
+interface NewsSection {
+  /** Título de la sección de noticias. */
+  title: string;
+  /** Lista de elementos (noticias) pertenecientes a la sección. */
+  items: NewsItem[];
+}
+
+/**
+ * @component NewsCarrouselComponent
+ * @description Componente que muestra un carrusel de noticias. Permite filtrar las secciones según una consulta de búsqueda proporcionada por el SearchService.
+ *
+ * @example
+ * &lt;app-news-carrousel&gt;&lt;/app-news-carrousel&gt;
+ */
+@Component({
+  selector: &#x27;app-news-carrousel&#x27;,
+  standalone: true,
+  // Se importan módulos y componentes necesarios para el funcionamiento del componente.
+  imports: [CommonModule, AlbunComponent],
+  templateUrl: &#x27;./news-carrousel.component.html&#x27;,
+  styleUrls: [&#x27;./news-carrousel.component.css&#x27;]
+})
+export class NewsCarrouselComponent implements OnInit, OnDestroy {
+  /**
+   * Secciones de noticias predeterminadas que se muestran en el carrusel.
+   */
+  sections: NewsSection[] &#x3D; [
+    {
+      title: &#x27;ULTIMAS NOVEDADES&#x27;,
+      items: [
+        {
+          description: &#x27;NVIDIA lanza nueva GPU RTX 5090 con rendimiento un 70% superior a la generación anterior.&#x27;,
+          imageUrl: &#x27;../../../../assets/OIP (6) 1.svg&#x27;,
+          time: &#x27;9 mins&#x27;
+        },
+        {
+          description: &#x27;Samsung presenta pantallas OLED transparentes para dispositivos móviles.&#x27;,
+          imageUrl: &#x27;../../../../assets/OIP (7) 1.svg&#x27;,
+          time: &#x27;12 mins&#x27;
+        },
+        {
+          description: &#x27;Microsoft anuncia Windows 12 con integración nativa de IA para 2025.&#x27;,
+          imageUrl: &#x27;../../../../assets/1418906 1.svg&#x27;,
+          time: &#x27;15 mins&#x27;
+        },
+        {
+          description: &#x27;PlayStation 6 revela tecnología de carga instantánea de juegos.&#x27;,
+          imageUrl: &#x27;../../../../assets/OIP (8) 1.svg&#x27;,
+          time: &#x27;20 mins&#x27;
+        }
+      ]
+    },
+    {
+      title: &#x27;AVANCES TECNOLOGICOS&#x27;,
+      items: [
+        {
+          description: &#x27;Primer ordenador cuántico comercial supera los 1000 qubits de potencia.&#x27;,
+          imageUrl: &#x27;../../../../assets/OIP (9) 1.svg&#x27;,
+          time: &#x27;9 mins&#x27;
+        },
+        {
+          description: &#x27;Baterías de estado sólido prometen autonomías de 1500 km para coches eléctricos.&#x27;,
+          imageUrl: &#x27;../../../../assets/R (2) 1.svg&#x27;,
+          time: &#x27;12 mins&#x27;
+        },
+        {
+          description: &#x27;IA logra diagnóstico médico con 99% de precisión en pruebas clínicas.&#x27;,
+          imageUrl: &#x27;../../../../assets/OIP (10) 1.svg&#x27;,
+          time: &#x27;15 mins&#x27;
+        },
+        {
+          description: &#x27;Nanorobots médicos capaces de destruir células cancerígenas en pruebas in vivo.&#x27;,
+          imageUrl: &#x27;../../../../assets/OIP (11) 1.svg&#x27;,
+          time: &#x27;20 mins&#x27;
+        }
+      ]
+    },
+    {
+      title: &#x27;OTRAS NOTICIAS DE INTERES&#x27;,
+      items: [
+        {
+          description: &#x27;Ciberataque global afecta a redes bancarias: recomendaciones de seguridad.&#x27;,
+          imageUrl: &#x27;../../../../assets/R (3) 1.svg&#x27;,
+          time: &#x27;9 mins&#x27;
+        },
+        {
+          description: &#x27;Tesla presenta nuevo modelo de auto volador con autonomía de 500 km.&#x27;,
+          imageUrl: &#x27;../../../../assets/R (4) 1.svg&#x27;,
+          time: &#x27;12 mins&#x27;
+        },
+        {
+          description: &#x27;Apple desarrolla tecnología de carga inalámbrica a distancia hasta 5 metros.&#x27;,
+          imageUrl: &#x27;../../../../assets/OIP (12) 1.svg&#x27;,
+          time: &#x27;15 mins&#x27;
+        },
+        {
+          description: &#x27;Starlink alcanza cobertura global de internet satelital de alta velocidad.&#x27;,
+          imageUrl: &#x27;../../../../assets/OIP (13) 1.svg&#x27;,
+          time: &#x27;20 mins&#x27;
+        }
+      ]
+    }
+  ];
+
+  /**
+   * Secciones filtradas según la consulta de búsqueda.
+   */
+  filteredSections: NewsSection[] &#x3D; [];
+
+  /**
+   * Suscripción al observable de búsqueda para actualizar la vista cuando se emite un nuevo valor.
+   */
+  private searchSubscription!: Subscription;
+
+  /**
+   * Constructor del componente.
+   *
+   * @param searchService - Servicio para gestionar la consulta de búsqueda.
+   */
+  constructor(private searchService: SearchService) {}
+
+  /**
+   * Método de ciclo de vida que se ejecuta al inicializar el componente.
+   *
+   * - Inicializa las secciones filtradas.
+   * - Se suscribe al observable del servicio de búsqueda para filtrar las secciones en tiempo real.
+   */
+  ngOnInit(): void {
+    this.filteredSections &#x3D; this.sections;
+    this.searchSubscription &#x3D; this.searchService.searchQuery$.subscribe((query: string) &#x3D;&gt; {
+      this.filterSections(query);
+    });
+  }
+
+  /**
+   * Filtra las secciones de noticias en función de la consulta de búsqueda.
+   *
+   * @param query - Texto de búsqueda para filtrar las descripciones de los elementos de noticias.
+   */
+  filterSections(query: string): void {
+    if (!query) {
+      this.filteredSections &#x3D; this.sections;
+      return;
+    }
+    const lowerQuery &#x3D; query.toLowerCase();
+    this.filteredSections &#x3D; this.sections
+      .map(section &#x3D;&gt; ({
+        title: section.title,
+        items: section.items.filter(item &#x3D;&gt;
+          item.description.toLowerCase().includes(lowerQuery)
+        )
+      }))
+      .filter(section &#x3D;&gt; section.items.length &gt; 0);
+  }
+
+  /**
+   * Método de ciclo de vida que se ejecuta al destruir el componente.
+   *
+   * - Se encarga de cancelar la suscripción al observable de búsqueda para evitar fugas de memoria.
+   */
+  ngOnDestroy(): void {
+    this.searchSubscription.unsubscribe();
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewsSection.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

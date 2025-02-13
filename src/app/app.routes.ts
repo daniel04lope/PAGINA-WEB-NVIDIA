@@ -6,6 +6,7 @@ import { AboutComponent } from './aboutus/Pages/about/about.component';
 import { HomeComponent } from './main-page/Pages/home/home.component';
 import { NewsCarrouselComponent } from './news/Components/news-carrousel/news-carrousel.component';
 import { NewsageComponent } from './news/Pages/newsage/newsage.component';
+import { SupportpageComponent } from './support/Pages/supportpage/supportpage.component';
 
 // Definición de las rutas de la aplicación
 export const routes: Routes = [
@@ -18,6 +19,8 @@ export const routes: Routes = [
 
   // Ruta para la página "Acerca de"
   { path: 'about', component: AboutComponent },
+
+  { path: 'support', component: SupportpageComponent },
 
   // Ruta para la página de noticias
   { path: 'news', component: NewsageComponent },

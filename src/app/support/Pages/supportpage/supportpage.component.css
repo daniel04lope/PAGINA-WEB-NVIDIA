@@ -1,0 +1,7 @@
+div {
+    background: url('/assets/fondoformulario.jpg') no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para que ocupe todo el fondo */
+    margin: 0; /* Elimina márgenes del body si hay espacios blancos */
+    height: 100vh; /* Asegúrate de que el fondo cubra toda la altura de la ventana */
+  }
+  

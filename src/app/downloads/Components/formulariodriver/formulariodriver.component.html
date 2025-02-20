@@ -1,0 +1,57 @@
+<div class="descarga-container">
+    
+  
+    <form (ngSubmit)="descargarDriver()" #driverForm="ngForm" class="form">
+        <h1>Descargar Drivers de Tarjetas Gráficas</h1>
+      <!-- Selección del modelo de tarjeta gráfica -->
+      <div class="form-group">
+        <label for="modelo">Modelo de Tarjeta Gráfica</label>
+        <select
+          id="modelo"
+          class="form-control"
+          [(ngModel)]="modeloSeleccionado"
+          name="modelo"
+          required
+        >
+          <option value="" disabled selected>Selecciona el modelo</option>
+          <option value="nvidia">NVIDIA</option>
+          <option value="amd">AMD</option>
+          <option value="intel">Intel</option>
+        </select>
+      </div>
+  
+      <!-- Selección del sistema operativo -->
+      <div class="form-group">
+        <label for="sistema">Sistema Operativo</label>
+        <select
+          id="sistema"
+          class="form-control"
+          [(ngModel)]="sistemaOperativoSeleccionado"
+          name="sistema"
+          required
+        >
+          <option value="" disabled selected>Selecciona el sistema operativo</option>
+          <option value="windows">Windows</option>
+          <option value="linux">Linux</option>
+          <option value="macos">MacOS</option>
+        </select>
+      </div>
+  
+      <!-- Botón de descarga -->
+      <div class="form-group">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!modeloSeleccionado || !sistemaOperativoSeleccionado"
+        >
+          Descargar Driver
+        </button>
+      </div>
+    </form>
+  
+    <!-- Mensaje de error (si aplica) -->
+    <div *ngIf="error" class="error-message">
+      <p>{{ error }}</p>
+    </div>
+  </div>
+  

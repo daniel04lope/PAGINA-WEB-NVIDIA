@@ -7,6 +7,7 @@ import { HomeComponent } from './main-page/Pages/home/home.component';
 import { NewsCarrouselComponent } from './news/Components/news-carrousel/news-carrousel.component';
 import { NewsageComponent } from './news/Pages/newsage/newsage.component';
 import { SupportpageComponent } from './support/Pages/supportpage/supportpage.component';
+import { DescargaprincipalComponent } from './downloads/Pages/descargaprincipal/descargaprincipal.component';
 
 // Definición de las rutas de la aplicación
 export const routes: Routes = [
@@ -24,6 +25,8 @@ export const routes: Routes = [
 
   // Ruta para la página de noticias
   { path: 'news', component: NewsageComponent },
+
+  { path: 'downloads', component: DescargaprincipalComponent },
 
   // Ruta comodín: redirige a la página de inicio en caso de que la URL no coincida con ninguna ruta definida
   { path: '**', redirectTo: '', pathMatch: 'full' } // Redirige a la página de inicio para rutas no encontradas

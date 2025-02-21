@@ -93,10 +93,16 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/CarouselComponent.html" data-type="entity-link" >CarouselComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/DescargaprincipalComponent.html" data-type="entity-link" >DescargaprincipalComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/FeauturesComponent.html" data-type="entity-link" >FeauturesComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/FooterComponent.html" data-type="entity-link" >FooterComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/FormulariodriverComponent.html" data-type="entity-link" >FormulariodriverComponent</a>
                             </li>
                             <li class="link">
                                 <a href="components/HeaderComponent.html" data-type="entity-link" >HeaderComponent</a>
@@ -111,6 +117,12 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <a href="components/NewsCarrouselComponent.html" data-type="entity-link" >NewsCarrouselComponent</a>
                             </li>
                             <li class="link">
+                                <a href="components/SupportFormComponent.html" data-type="entity-link" >SupportFormComponent</a>
+                            </li>
+                            <li class="link">
+                                <a href="components/SupportpageComponent.html" data-type="entity-link" >SupportpageComponent</a>
+                            </li>
+                            <li class="link">
                                 <a href="components/TeamComponent.html" data-type="entity-link" >TeamComponent</a>
                             </li>
                         </ul>
@@ -123,6 +135,9 @@ customElements.define('compodoc-menu', class extends HTMLElement {
                                 <span class="icon ion-ios-arrow-down"></span>
                             </div>
                             <ul class="links collapse " ${ isNormalMode ? 'id="injectables-links"' : 'id="xs-injectables-links"' }>
+                                <li class="link">
+                                    <a href="injectables/GpuInfoService.html" data-type="entity-link" >GpuInfoService</a>
+                                </li>
                                 <li class="link">
                                     <a href="injectables/SearchService.html" data-type="entity-link" >SearchService</a>
                                 </li>

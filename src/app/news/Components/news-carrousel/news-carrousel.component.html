@@ -1,24 +1,99 @@
+<!--
+  @description Itera sobre la lista de secciones filtradas y genera su contenido dinámicamente.
+-->
 <div *ngFor="let section of filteredSections">
+  <!--
+    @description Título de la sección de noticias.
+    @binding section.title - Contiene el título de la sección.
+  -->
   <h1>{{ section.title }}</h1>
+
+  <!--
+    @description Contenedor con desplazamiento horizontal para organizar los elementos.
+    @class scroll-container - Aplica estilos para permitir el desplazamiento horizontal.
+  -->
   <div class="scroll-container">
+    <!--
+      @description Itera sobre los elementos de la sección y genera tarjetas para cada noticia.
+      @binding section.items - Lista de noticias dentro de la sección.
+    -->
     <div class="col" *ngFor="let item of section.items">
-      <div class="card shadow-lg h-100">
-        <!-- Se utiliza un elemento SVG para la imagen -->
+      <!--
+        @description Tarjeta que representa una noticia. Es clickeable para abrir el modal.
+        @binding item - Contiene la información de la noticia.
+        @event (click) - Llama a openNewsModal(item) para mostrar los detalles en un modal.
+      -->
+      <div class="card shadow-lg h-100" (click)="openNewsModal(item)" style="cursor: pointer;">
+        <!--
+          @description Contenedor SVG para la imagen con fondo oscuro de respaldo.
+          @binding item.description - Se usa como etiqueta aria-label para accesibilidad.
+          @binding item.imageUrl - Fuente de la imagen de la noticia.
+        -->
         <svg class="bd-placeholder-img card-img-top" width="100%" height="400"
              xmlns="http://www.w3.org/2000/svg" role="img" 
              [attr.aria-label]="item.description"
              preserveAspectRatio="xMidYMid slice" focusable="false">
+          <!--
+            @description Fondo oscuro en caso de que la imagen no se cargue.
+          -->
           <rect width="100%" height="100%" fill="#2d3035"></rect>
-          <image [attr.href]="item.imageUrl" width="100%" height="100%"
-                 preserveAspectRatio="xMidYMid slice"></image>
+          <!--
+            @description Imagen de la noticia cargada dinámicamente.
+          -->
+          <image [attr.href]="item.imageUrl" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>
         </svg>
+
+        <!--
+          @description Cuerpo de la tarjeta que muestra la descripción y el tiempo de publicación.
+        -->
         <div class="card-body">
+          <!--
+            @description Texto descriptivo de la noticia.
+            @binding item.description - Contiene un resumen de la noticia.
+          -->
           <p class="card-text">{{ item.description }}</p>
           <div class="d-flex justify-content-between align-items-center">
+            <!--
+              @description Muestra el tiempo transcurrido desde la publicación.
+              @binding item.time - Tiempo en minutos u horas desde la publicación.
+            -->
             <small class="text-body-secondary">{{ item.time }}</small>
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<!--
+  @description Modal para mostrar los detalles de la noticia seleccionada.
+  @condition Se muestra solo si showModal es verdadero.
+-->
+<div *ngIf="showModal" class="modal-overlay">
+  <div class="modal-content">
+    <!--
+      @description Botón para cerrar el modal.
+      @event (click) - Llama a closeNewsModal() para cerrar el modal.
+    -->
+    <button class="close-button" (click)="closeNewsModal()">X</button>
+    
+    <!--
+      @description Título de la noticia seleccionada.
+      @binding selectedNewsItem?.description - Muestra el título de la noticia en el modal.
+    -->
+    <h2>{{ selectedNewsItem?.description }}</h2>
+    
+    <!--
+      @description Imagen asociada a la noticia seleccionada.
+      @binding selectedNewsItem?.imageUrl - Fuente de la imagen mostrada en el modal.
+    -->
+    <img [src]="selectedNewsItem?.imageUrl" alt="Imagen de la noticia" class="modal-image">
+    
+    <!--
+      @description Información adicional de la noticia, incluyendo el tiempo transcurrido y la descripción completa.
+    -->
+    <p><strong>Publicado hace:</strong> {{ selectedNewsItem?.time }}</p>
+    <p><strong>Descripción completa:</strong></p>
+    <p>{{ selectedNewsItem?.fullDescription }}</p>
   </div>
 </div>

@@ -25,4 +25,60 @@
   }
   h1{
     text-align: center;
+
 }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px; /* Agrega un poco de margen interno para evitar que el modal toque los bordes */
+}
+
+.modal-content {
+  background: white;
+  padding: 30px; /* Aumenta el espaciado interno */
+  border-radius: 10px;
+  text-align: center;
+  max-width: 550px; /* Ligeramente más ancho */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  margin: 20px 0; /* Aumenta el margen superior e inferior */
+  border-radius: 5px; /* Añade bordes redondeados para una mejor estética */
+}
+
+.modal-content p {
+  margin: 15px 0; /* Separa más el texto dentro del modal */
+  font-size: 18px; /* Aumenta el tamaño de la fuente */
+  line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+.close-button {
+  position: absolute;
+  top: -7%;
+  right: -8%;
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 15px; /* Botón más grande para facilitar el cierre */
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 100%;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: darkred; /* Efecto hover para mejorar la experiencia de usuario */
+}
+p{text-align: justify;}

@@ -1,76 +1,113 @@
 <div class="formulario">
-<form [formGroup]="supportForm" (ngSubmit)="onSubmit()">
-  <h1>CONTACTANOS</h1>
-  <div class="form-group">
-    <label for="name">Nombre:</label>
-    <input
-      type="text"
-      id="name"
-      formControlName="name"
-      placeholder="Ingrese su nombre"
-    />
-    <div class="error" *ngIf="supportForm.get('name')?.invalid && (supportForm.get('name')?.dirty || supportForm.get('name')?.touched)">
-      <small *ngIf="supportForm.get('name')?.errors?.['required']">
-        El nombre es requerido.
-      </small>
-      <small *ngIf="supportForm.get('name')?.errors?.['minlength']">
-        El nombre debe tener al menos 3 caracteres.
-      </small>
-    </div>
-  </div>
+  <!-- Formulario que utiliza un FormGroup de Angular para enlazar con el modelo de datos -->
+  <form [formGroup]="supportForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Título principal del formulario -->
+    <h1>CONTACTANOS</h1>
 
-  <div class="form-group">
-    <label for="email">Correo Electrónico:</label>
-    <input
-      type="email"
-      id="email"
-      formControlName="email"
-      placeholder="Ingrese su correo"
-    />
-    <div class="error" *ngIf="supportForm.get('email')?.invalid && (supportForm.get('email')?.dirty || supportForm.get('email')?.touched)">
-      <small *ngIf="supportForm.get('email')?.errors?.['required']">
-        El correo es requerido.
-      </small>
-      <small *ngIf="supportForm.get('email')?.errors?.['email']">
-        El formato del correo no es válido.
-      </small>
+    <!-- Sección de nombre -->
+    <div class="form-group">
+      <!-- Etiqueta para el campo nombre -->
+      <label for="name">Nombre:</label>
+      
+      <!-- Campo de entrada para el nombre, vinculado al control 'name' del FormGroup -->
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        placeholder="Ingrese su nombre"
+      />
+      
+      <!-- Mensaje de error si el campo 'name' es inválido y ha sido tocado o sucio -->
+      <div class="error" *ngIf="supportForm.get('name')?.invalid && (supportForm.get('name')?.dirty || supportForm.get('name')?.touched)">
+        <!-- Mensaje de error cuando el campo 'name' es requerido pero está vacío -->
+        <small *ngIf="supportForm.get('name')?.errors?.['required']">
+          El nombre es requerido.
+        </small>
+        <!-- Mensaje de error cuando el campo 'name' tiene menos de 3 caracteres -->
+        <small *ngIf="supportForm.get('name')?.errors?.['minlength']">
+          El nombre debe tener al menos 3 caracteres.
+        </small>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label for="subject">Asunto:</label>
-    <input
-      type="text"
-      id="subject"
-      formControlName="subject"
-      placeholder="Asunto del soporte"
-    />
-    <div class="error" *ngIf="supportForm.get('subject')?.invalid && (supportForm.get('subject')?.dirty || supportForm.get('subject')?.touched)">
-      <small *ngIf="supportForm.get('subject')?.errors?.['required']">
-        El asunto es requerido.
-      </small>
+    <!-- Sección de correo electrónico -->
+    <div class="form-group">
+      <!-- Etiqueta para el campo correo electrónico -->
+      <label for="email">Correo Electrónico:</label>
+      
+      <!-- Campo de entrada para el correo electrónico, vinculado al control 'email' del FormGroup -->
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        placeholder="Ingrese su correo"
+      />
+      
+      <!-- Mensaje de error si el campo 'email' es inválido y ha sido tocado o sucio -->
+      <div class="error" *ngIf="supportForm.get('email')?.invalid && (supportForm.get('email')?.dirty || supportForm.get('email')?.touched)">
+        <!-- Mensaje de error cuando el campo 'email' es requerido pero está vacío -->
+        <small *ngIf="supportForm.get('email')?.errors?.['required']">
+          El correo es requerido.
+        </small>
+        <!-- Mensaje de error cuando el campo 'email' no tiene un formato válido -->
+        <small *ngIf="supportForm.get('email')?.errors?.['email']">
+          El formato del correo no es válido.
+        </small>
+      </div>
     </div>
-  </div>
 
-  <div class="form-group">
-    <label for="description">Descripción:</label>
-    <textarea
-      id="description"
-      formControlName="description"
-      placeholder="Describe tu problema"
-    ></textarea>
-    <div class="error" *ngIf="supportForm.get('description')?.invalid && (supportForm.get('description')?.dirty || supportForm.get('description')?.touched)">
-      <small *ngIf="supportForm.get('description')?.errors?.['required']">
-        La descripción es requerida.
-      </small>
-      <small *ngIf="supportForm.get('description')?.errors?.['minlength']">
-        La descripción debe tener al menos 10 caracteres.
-      </small>
+    <!-- Sección de asunto -->
+    <div class="form-group">
+      <!-- Etiqueta para el campo asunto -->
+      <label for="subject">Asunto:</label>
+      
+      <!-- Campo de entrada para el asunto, vinculado al control 'subject' del FormGroup -->
+      <input
+        type="text"
+        id="subject"
+        formControlName="subject"
+        placeholder="Asunto del soporte"
+      />
+      
+      <!-- Mensaje de error si el campo 'subject' es inválido y ha sido tocado o sucio -->
+      <div class="error" *ngIf="supportForm.get('subject')?.invalid && (supportForm.get('subject')?.dirty || supportForm.get('subject')?.touched)">
+        <!-- Mensaje de error cuando el campo 'subject' es requerido pero está vacío -->
+        <small *ngIf="supportForm.get('subject')?.errors?.['required']">
+          El asunto es requerido.
+        </small>
+      </div>
     </div>
-  </div>
 
-  <button type="submit" [disabled]="supportForm.invalid">
-    Enviar Soporte
-  </button>
-</form>
+    <!-- Sección de descripción -->
+    <div class="form-group">
+      <!-- Etiqueta para el campo descripción -->
+      <label for="description">Descripción:</label>
+      
+      <!-- Campo de entrada para la descripción, vinculado al control 'description' del FormGroup -->
+      <textarea
+        id="description"
+        formControlName="description"
+        placeholder="Describe tu problema"
+      ></textarea>
+      
+      <!-- Mensaje de error si el campo 'description' es inválido y ha sido tocado o sucio -->
+      <div class="error" *ngIf="supportForm.get('description')?.invalid && (supportForm.get('description')?.dirty || supportForm.get('description')?.touched)">
+        <!-- Mensaje de error cuando el campo 'description' es requerido pero está vacío -->
+        <small *ngIf="supportForm.get('description')?.errors?.['required']">
+          La descripción es requerida.
+        </small>
+        <!-- Mensaje de error cuando el campo 'description' tiene menos de 10 caracteres -->
+        <small *ngIf="supportForm.get('description')?.errors?.['minlength']">
+          La descripción debe tener al menos 10 caracteres.
+        </small>
+      </div>
+    </div>
+
+    <!-- Botón de envío del formulario -->
+    <!-- Se desactiva si el formulario es inválido -->
+    <button type="submit" [disabled]="supportForm.invalid">
+      Enviar Soporte
+    </button>
+  </form>
 </div>

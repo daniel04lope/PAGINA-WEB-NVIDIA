@@ -147,6 +147,12 @@
                                         </a>
                                 </li>
                                 <li>
+                                        <a href="#fullDescription" 
+>
+                                            fullDescription
+                                        </a>
+                                </li>
+                                <li>
                                         <a href="#imageUrl" 
 >
                                             imageUrl
@@ -202,7 +208,46 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>Descripción de la noticia.</p>
+                                    <div class="io-description"><p>Descripción corta de la noticia.</p>
+</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="fullDescription"></a>
+                                        <span class="name "><b>fullDescription</b>
+                                            <a href="#fullDescription">
+                                                <span class="icon ion-ios-link"></span>
+                                            </a>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>fullDescription:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>Descripción completa de la noticia.</p>
 </div>
                                 </td>
                             </tr>
@@ -292,7 +337,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
-import { CommonModule } from &#x27;@angular/common&#x27;; // Importa CommonModule para utilizar directivas comunes de Angular
+import { CommonModule } from &#x27;@angular/common&#x27;;
 import { Subscription } from &#x27;rxjs&#x27;;
 import { SearchService } from &#x27;../../Services/search-service.service&#x27;;
 import { AlbunComponent } from &#x27;../../../main-page/Components/albun/albun.component&#x27;;
@@ -302,8 +347,10 @@ import { AlbunComponent } from &#x27;../../../main-page/Components/albun/albun.c
  * @description Representa un elemento individual de noticia.
  */
 interface NewsItem {
-  /** Descripción de la noticia. */
+  /** Descripción corta de la noticia. */
   description: string;
+  /** Descripción completa de la noticia. */
+  fullDescription: string;
   /** URL de la imagen asociada a la noticia. */
   imageUrl: string;
   /** Tiempo transcurrido desde la publicación de la noticia. */
@@ -323,7 +370,8 @@ interface NewsSection {
 
 /**
  * @component NewsCarrouselComponent
- * @description Componente que muestra un carrusel de noticias. Permite filtrar las secciones según una consulta de búsqueda proporcionada por el SearchService.
+ * @description Componente que muestra un carrusel de noticias. 
+ * Permite filtrar las secciones según una consulta de búsqueda proporcionada por el SearchService.
  *
  * @example
  * &lt;app-news-carrousel&gt;&lt;/app-news-carrousel&gt;
@@ -331,14 +379,14 @@ interface NewsSection {
 @Component({
   selector: &#x27;app-news-carrousel&#x27;,
   standalone: true,
-  // Se importan módulos y componentes necesarios para el funcionamiento del componente.
   imports: [CommonModule, AlbunComponent],
   templateUrl: &#x27;./news-carrousel.component.html&#x27;,
   styleUrls: [&#x27;./news-carrousel.component.css&#x27;]
 })
 export class NewsCarrouselComponent implements OnInit, OnDestroy {
   /**
-   * Secciones de noticias predeterminadas que se muestran en el carrusel.
+   * @property {NewsSection[]} sections
+   * @description Secciones de noticias predeterminadas que se muestran en el carrusel.
    */
   sections: NewsSection[] &#x3D; [
     {
@@ -346,21 +394,25 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
       items: [
         {
           description: &#x27;NVIDIA lanza nueva GPU RTX 5090 con rendimiento un 70% superior a la generación anterior.&#x27;,
+          fullDescription: &#x27;NVIDIA acaba de presentar su nueva tarjeta gráfica RTX 5090, que promete ser un salto significativo en el rendimiento, ofreciendo un 70% más de poder de procesamiento en comparación con la generación anterior. Esto representa una mejora revolucionaria para los gamers y los profesionales del diseño gráfico.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (6) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Samsung presenta pantallas OLED transparentes para dispositivos móviles.&#x27;,
+          fullDescription: &#x27;Samsung ha anunciado un avance importante en la tecnología de pantallas OLED, revelando pantallas transparentes que podrían revolucionar los dispositivos móviles en los próximos años. Estas pantallas permitirían integrar características innovadoras, como la visualización de datos a través de superficies parcialmente transparentes.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (7) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;Microsoft anuncia Windows 12 con integración nativa de IA para 2025.&#x27;,
+          fullDescription: &#x27;Microsoft ha revelado su plan para Windows 12, una versión revolucionaria de su sistema operativo que integrará inteligencia artificial de forma nativa para mejorar la productividad, la seguridad y la personalización. Con el lanzamiento previsto para 2025, esta nueva versión promete ser un cambio radical en la experiencia de usuario.&#x27;,
           imageUrl: &#x27;../../../../assets/1418906 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;PlayStation 6 revela tecnología de carga instantánea de juegos.&#x27;,
+          fullDescription: &#x27;Sony ha presentado una de las características más esperadas para su futura consola PlayStation 6: la tecnología de carga instantánea de juegos. Esta tecnología permitirá que los jugadores se sumerjan en sus títulos favoritos sin largas esperas, mejorando la experiencia general de juego.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (8) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -371,21 +423,25 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
       items: [
         {
           description: &#x27;Primer ordenador cuántico comercial supera los 1000 qubits de potencia.&#x27;,
+          fullDescription: &#x27;El primer ordenador cuántico comercial ha superado los 1000 qubits, una hazaña que coloca la computación cuántica un paso más cerca de ser una herramienta viable para resolver problemas complejos que los ordenadores tradicionales no pueden abordar.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (9) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Baterías de estado sólido prometen autonomías de 1500 km para coches eléctricos.&#x27;,
+          fullDescription: &#x27;Las nuevas baterías de estado sólido están revolucionando el mercado de los vehículos eléctricos, ofreciendo una autonomía de hasta 1500 km con una sola carga. Este avance podría cambiar la industria automotriz y resolver uno de los mayores desafíos de los coches eléctricos actuales.&#x27;,
           imageUrl: &#x27;../../../../assets/R (2) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;IA logra diagnóstico médico con 99% de precisión en pruebas clínicas.&#x27;,
+          fullDescription: &#x27;Una nueva inteligencia artificial ha logrado un 99% de precisión en diagnósticos médicos durante pruebas clínicas, lo que representa un avance significativo para la medicina moderna, permitiendo diagnósticos rápidos y fiables con el apoyo de la tecnología.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (10) 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;Nanorobots médicos capaces de destruir células cancerígenas en pruebas in vivo.&#x27;,
+          fullDescription: &#x27;Los nanorobots médicos, desarrollados para destruir células cancerígenas de manera precisa, están demostrando resultados prometedores en pruebas in vivo. Este avance podría revolucionar el tratamiento del cáncer al permitir terapias más selectivas y menos invasivas.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (11) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -396,21 +452,25 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
       items: [
         {
           description: &#x27;Ciberataque global afecta a redes bancarias: recomendaciones de seguridad.&#x27;,
+          fullDescription: &#x27;Un ciberataque global ha afectado a redes bancarias de todo el mundo, exponiendo vulnerabilidades importantes. Los expertos recomiendan adoptar medidas de seguridad adicionales, como la autenticación multifactorial y el monitoreo constante de las transacciones.&#x27;,
           imageUrl: &#x27;../../../../assets/R (3) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Tesla presenta nuevo modelo de auto volador con autonomía de 500 km.&#x27;,
+          fullDescription: &#x27;Tesla ha dado a conocer su nuevo modelo de auto volador, un vehículo eléctrico capaz de volar y que promete una autonomía de 500 km. Este modelo está destinado a cambiar la forma en que nos desplazamos, abriendo nuevas posibilidades para el transporte aéreo urbano.&#x27;,
           imageUrl: &#x27;../../../../assets/R (4) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;Apple desarrolla tecnología de carga inalámbrica a distancia hasta 5 metros.&#x27;,
+          fullDescription: &#x27;Apple ha anunciado avances en su tecnología de carga inalámbrica, permitiendo cargar dispositivos a una distancia de hasta 5 metros. Este avance podría transformar la forma en que cargamos nuestros dispositivos, eliminando la necesidad de cables.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (12) 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;Starlink alcanza cobertura global de internet satelital de alta velocidad.&#x27;,
+          fullDescription: &#x27;Starlink, el proyecto de internet satelital de SpaceX, ha alcanzado una cobertura global, ofreciendo conexión a internet de alta velocidad en lugares remotos del planeta. Este avance abre nuevas oportunidades para la educación y el acceso a la información en áreas desatendidas.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (13) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -419,27 +479,39 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
   ];
 
   /**
-   * Secciones filtradas según la consulta de búsqueda.
+   * @property {NewsSection[]} filteredSections
+   * @description Secciones filtradas según la consulta de búsqueda.
    */
   filteredSections: NewsSection[] &#x3D; [];
 
   /**
-   * Suscripción al observable de búsqueda para actualizar la vista cuando se emite un nuevo valor.
+   * @property {Subscription} searchSubscription
+   * @description Suscripción al observable de búsqueda para actualizar la vista cuando se emite un nuevo valor.
    */
   private searchSubscription!: Subscription;
 
   /**
-   * Constructor del componente.
-   *
-   * @param searchService - Servicio para gestionar la consulta de búsqueda.
+   * @property {NewsItem | null} selectedNewsItem
+   * @description Noticia seleccionada para mostrar en el modal.
+   */
+  selectedNewsItem: NewsItem | null &#x3D; null;
+
+  /**
+   * @property {boolean} showModal
+   * @description Indica si el modal de noticias está abierto o cerrado.
+   */
+  showModal: boolean &#x3D; false;
+
+  /**
+   * @constructor
+   * @param {SearchService} searchService - Servicio de búsqueda que emite los términos ingresados por el usuario.
    */
   constructor(private searchService: SearchService) {}
 
   /**
-   * Método de ciclo de vida que se ejecuta al inicializar el componente.
-   *
-   * - Inicializa las secciones filtradas.
-   * - Se suscribe al observable del servicio de búsqueda para filtrar las secciones en tiempo real.
+   * @method ngOnInit
+   * @description Método del ciclo de vida de Angular que se ejecuta al inicializar el componente.
+   * Se suscribe al servicio de búsqueda y carga las secciones iniciales.
    */
   ngOnInit(): void {
     this.filteredSections &#x3D; this.sections;
@@ -449,9 +521,37 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Filtra las secciones de noticias en función de la consulta de búsqueda.
-   *
-   * @param query - Texto de búsqueda para filtrar las descripciones de los elementos de noticias.
+   * @method openNewsModal
+   * @description Abre el modal con los detalles de la noticia seleccionada.
+   * @param {NewsItem} item - Noticia seleccionada por el usuario.
+   */
+  openNewsModal(item: NewsItem): void {
+    this.selectedNewsItem &#x3D; item;
+    this.showModal &#x3D; true;
+  }
+
+  /**
+   * @method closeNewsModal
+   * @description Cierra el modal de la noticia.
+   */
+  closeNewsModal(): void {
+    this.selectedNewsItem &#x3D; null;
+    this.showModal &#x3D; false;
+  }
+
+  /**
+   * @method ngOnDestroy
+   * @description Método del ciclo de vida de Angular que se ejecuta antes de destruir el componente.
+   * Se encarga de cancelar la suscripción al servicio de búsqueda para evitar fugas de memoria.
+   */
+  ngOnDestroy(): void {
+    this.searchSubscription.unsubscribe();
+  }
+
+  /**
+   * @method filterSections
+   * @description Filtra las secciones de noticias en función del término de búsqueda ingresado.
+   * @param {string} query - Término de búsqueda ingresado por el usuario.
    */
   filterSections(query: string): void {
     if (!query) {
@@ -467,15 +567,6 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
         )
       }))
       .filter(section &#x3D;&gt; section.items.length &gt; 0);
-  }
-
-  /**
-   * Método de ciclo de vida que se ejecuta al destruir el componente.
-   *
-   * - Se encarga de cancelar la suscripción al observable de búsqueda para evitar fugas de memoria.
-   */
-  ngOnDestroy(): void {
-    this.searchSubscription.unsubscribe();
   }
 }
 </code></pre>

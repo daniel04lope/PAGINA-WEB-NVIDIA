@@ -128,7 +128,8 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <b>Example :</b><div><pre class="line-numbers"><code class="language-html">&lt;app-news-carrousel&gt;&lt;/app-news-carrousel&gt;</code></pre></div>
+        <p>Permite filtrar las secciones según una consulta de búsqueda proporcionada por el SearchService.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">&lt;app-news-carrousel&gt;&lt;/app-news-carrousel&gt;</code></pre></div>
     </p>
 
 
@@ -220,6 +221,12 @@
                             <li>
                                 <a href="#sections" >sections</a>
                             </li>
+                            <li>
+                                <a href="#selectedNewsItem" >selectedNewsItem</a>
+                            </li>
+                            <li>
+                                <a href="#showModal" >showModal</a>
+                            </li>
                         </ul>
                     </td>
                 </tr>
@@ -233,6 +240,9 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
+                                <a href="#closeNewsModal" >closeNewsModal</a>
+                            </li>
+                            <li>
                                 <a href="#filterSections" >filterSections</a>
                             </li>
                             <li>
@@ -240,6 +250,9 @@
                             </li>
                             <li>
                                 <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#openNewsModal" >openNewsModal</a>
                             </li>
                         </ul>
                     </td>
@@ -264,14 +277,12 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:136</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:165</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>Constructor del componente.</p>
-</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -297,7 +308,7 @@
                                                     
                                                         <td>
                                                                 <ul>
-<li>Servicio para gestionar la consulta de búsqueda.</li>
+<li>Servicio de búsqueda que emite los términos ingresados por el usuario.</li>
 </ul>
 
                                                         </td>
@@ -324,6 +335,43 @@
         <tbody>
             <tr>
                 <td class="col-md-4">
+                    <a name="closeNewsModal"></a>
+                    <span class="name">
+                        <span ><b>closeNewsModal</b></span>
+                        <a href="#closeNewsModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeNewsModal()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="199"
+                                    class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:199</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
                     <a name="filterSections"></a>
                     <span class="name">
                         <span ><b>filterSections</b></span>
@@ -340,16 +388,14 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="163"
-                                    class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:163</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="218"
+                                    class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:218</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Filtra las secciones de noticias en función de la consulta de búsqueda.</p>
-</div>
 
                             <div class="io-description">
                                 <b>Parameters :</b>
@@ -377,7 +423,7 @@
 
                                             <td>
                                                     <ul>
-<li>Texto de búsqueda para filtrar las descripciones de los elementos de noticias.</li>
+<li>Término de búsqueda ingresado por el usuario.</li>
 </ul>
 
                                             </td>
@@ -416,18 +462,15 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="184"
-                                    class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:184</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="209"
+                                    class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:209</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Método de ciclo de vida que se ejecuta al destruir el componente.</p>
-<ul>
-<li>Se encarga de cancelar la suscripción al observable de búsqueda para evitar fugas de memoria.</li>
-</ul>
+                        <div class="io-description"><p>Se encarga de cancelar la suscripción al servicio de búsqueda para evitar fugas de memoria.</p>
 </div>
 
                         <div class="io-description">
@@ -458,25 +501,95 @@
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="151"
-                                    class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:151</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="178"
+                                    class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:178</a></div>
                         </td>
                     </tr>
 
 
             <tr>
                 <td class="col-md-4">
-                        <div class="io-description"><p>Método de ciclo de vida que se ejecuta al inicializar el componente.</p>
-<ul>
-<li>Inicializa las secciones filtradas.</li>
-<li>Se suscribe al observable del servicio de búsqueda para filtrar las secciones en tiempo real.</li>
-</ul>
+                        <div class="io-description"><p>Se suscribe al servicio de búsqueda y carga las secciones iniciales.</p>
 </div>
 
                         <div class="io-description">
                             <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                         </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openNewsModal"></a>
+                    <span class="name">
+                        <span ><b>openNewsModal</b></span>
+                        <a href="#openNewsModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openNewsModal(item: <a href="../interfaces/NewsItem.html" target="_self">NewsItem</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="190"
+                                    class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:190</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>item</td>
+                                            <td>
+                                                            <code><a href="../interfaces/NewsItem.html" target="_self" >NewsItem</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Noticia seleccionada por el usuario.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
                 </td>
             </tr>
         </tbody>
@@ -511,16 +624,10 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:131</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="147" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:147</a></div>
                         </td>
                     </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Secciones filtradas según la consulta de búsqueda.</p>
-</div>
-                </td>
-            </tr>
 
         </tbody>
     </table>
@@ -544,16 +651,10 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:136</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="153" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:153</a></div>
                         </td>
                     </tr>
 
-            <tr>
-                <td class="col-md-4">
-                    <div class="io-description"><p>Suscripción al observable de búsqueda para actualizar la vista cuando se emite un nuevo valor.</p>
-</div>
-                </td>
-            </tr>
 
         </tbody>
     </table>
@@ -582,21 +683,25 @@
       items: [
         {
           description: &#x27;NVIDIA lanza nueva GPU RTX 5090 con rendimiento un 70% superior a la generación anterior.&#x27;,
+          fullDescription: &#x27;NVIDIA acaba de presentar su nueva tarjeta gráfica RTX 5090, que promete ser un salto significativo en el rendimiento, ofreciendo un 70% más de poder de procesamiento en comparación con la generación anterior. Esto representa una mejora revolucionaria para los gamers y los profesionales del diseño gráfico.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (6) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Samsung presenta pantallas OLED transparentes para dispositivos móviles.&#x27;,
+          fullDescription: &#x27;Samsung ha anunciado un avance importante en la tecnología de pantallas OLED, revelando pantallas transparentes que podrían revolucionar los dispositivos móviles en los próximos años. Estas pantallas permitirían integrar características innovadoras, como la visualización de datos a través de superficies parcialmente transparentes.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (7) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;Microsoft anuncia Windows 12 con integración nativa de IA para 2025.&#x27;,
+          fullDescription: &#x27;Microsoft ha revelado su plan para Windows 12, una versión revolucionaria de su sistema operativo que integrará inteligencia artificial de forma nativa para mejorar la productividad, la seguridad y la personalización. Con el lanzamiento previsto para 2025, esta nueva versión promete ser un cambio radical en la experiencia de usuario.&#x27;,
           imageUrl: &#x27;../../../../assets/1418906 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;PlayStation 6 revela tecnología de carga instantánea de juegos.&#x27;,
+          fullDescription: &#x27;Sony ha presentado una de las características más esperadas para su futura consola PlayStation 6: la tecnología de carga instantánea de juegos. Esta tecnología permitirá que los jugadores se sumerjan en sus títulos favoritos sin largas esperas, mejorando la experiencia general de juego.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (8) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -607,21 +712,25 @@
       items: [
         {
           description: &#x27;Primer ordenador cuántico comercial supera los 1000 qubits de potencia.&#x27;,
+          fullDescription: &#x27;El primer ordenador cuántico comercial ha superado los 1000 qubits, una hazaña que coloca la computación cuántica un paso más cerca de ser una herramienta viable para resolver problemas complejos que los ordenadores tradicionales no pueden abordar.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (9) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Baterías de estado sólido prometen autonomías de 1500 km para coches eléctricos.&#x27;,
+          fullDescription: &#x27;Las nuevas baterías de estado sólido están revolucionando el mercado de los vehículos eléctricos, ofreciendo una autonomía de hasta 1500 km con una sola carga. Este avance podría cambiar la industria automotriz y resolver uno de los mayores desafíos de los coches eléctricos actuales.&#x27;,
           imageUrl: &#x27;../../../../assets/R (2) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;IA logra diagnóstico médico con 99% de precisión en pruebas clínicas.&#x27;,
+          fullDescription: &#x27;Una nueva inteligencia artificial ha logrado un 99% de precisión en diagnósticos médicos durante pruebas clínicas, lo que representa un avance significativo para la medicina moderna, permitiendo diagnósticos rápidos y fiables con el apoyo de la tecnología.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (10) 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;Nanorobots médicos capaces de destruir células cancerígenas en pruebas in vivo.&#x27;,
+          fullDescription: &#x27;Los nanorobots médicos, desarrollados para destruir células cancerígenas de manera precisa, están demostrando resultados prometedores en pruebas in vivo. Este avance podría revolucionar el tratamiento del cáncer al permitir terapias más selectivas y menos invasivas.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (11) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -632,21 +741,25 @@
       items: [
         {
           description: &#x27;Ciberataque global afecta a redes bancarias: recomendaciones de seguridad.&#x27;,
+          fullDescription: &#x27;Un ciberataque global ha afectado a redes bancarias de todo el mundo, exponiendo vulnerabilidades importantes. Los expertos recomiendan adoptar medidas de seguridad adicionales, como la autenticación multifactorial y el monitoreo constante de las transacciones.&#x27;,
           imageUrl: &#x27;../../../../assets/R (3) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Tesla presenta nuevo modelo de auto volador con autonomía de 500 km.&#x27;,
+          fullDescription: &#x27;Tesla ha dado a conocer su nuevo modelo de auto volador, un vehículo eléctrico capaz de volar y que promete una autonomía de 500 km. Este modelo está destinado a cambiar la forma en que nos desplazamos, abriendo nuevas posibilidades para el transporte aéreo urbano.&#x27;,
           imageUrl: &#x27;../../../../assets/R (4) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;Apple desarrolla tecnología de carga inalámbrica a distancia hasta 5 metros.&#x27;,
+          fullDescription: &#x27;Apple ha anunciado avances en su tecnología de carga inalámbrica, permitiendo cargar dispositivos a una distancia de hasta 5 metros. Este avance podría transformar la forma en que cargamos nuestros dispositivos, eliminando la necesidad de cables.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (12) 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;Starlink alcanza cobertura global de internet satelital de alta velocidad.&#x27;,
+          fullDescription: &#x27;Starlink, el proyecto de internet satelital de SpaceX, ha alcanzado una cobertura global, ofreciendo conexión a internet de alta velocidad en lugares remotos del planeta. Este avance abre nuevas oportunidades para la educación y el acceso a la información en áreas desatendidas.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (13) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -657,16 +770,72 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:50</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:53</a></div>
                         </td>
                     </tr>
 
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
             <tr>
                 <td class="col-md-4">
-                    <div class="io-description"><p>Secciones de noticias predeterminadas que se muestran en el carrusel.</p>
-</div>
+                    <a name="selectedNewsItem"></a>
+                    <span class="name">
+                        <span ><b>selectedNewsItem</b></span>
+                        <a href="#selectedNewsItem"><span class="icon ion-ios-link"></span></a>
+                    </span>
                 </td>
             </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/NewsItem.html" target="_self" >NewsItem | null</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>null</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="159" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:159</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showModal"></a>
+                    <span class="name">
+                        <span ><b>showModal</b></span>
+                        <a href="#showModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="165" class="link-to-prism">src/app/news/Components/news-carrousel/news-carrousel.component.ts:165</a></div>
+                        </td>
+                    </tr>
+
 
         </tbody>
     </table>
@@ -677,7 +846,7 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
-import { CommonModule } from &#x27;@angular/common&#x27;; // Importa CommonModule para utilizar directivas comunes de Angular
+import { CommonModule } from &#x27;@angular/common&#x27;;
 import { Subscription } from &#x27;rxjs&#x27;;
 import { SearchService } from &#x27;../../Services/search-service.service&#x27;;
 import { AlbunComponent } from &#x27;../../../main-page/Components/albun/albun.component&#x27;;
@@ -687,8 +856,10 @@ import { AlbunComponent } from &#x27;../../../main-page/Components/albun/albun.c
  * @description Representa un elemento individual de noticia.
  */
 interface NewsItem {
-  /** Descripción de la noticia. */
+  /** Descripción corta de la noticia. */
   description: string;
+  /** Descripción completa de la noticia. */
+  fullDescription: string;
   /** URL de la imagen asociada a la noticia. */
   imageUrl: string;
   /** Tiempo transcurrido desde la publicación de la noticia. */
@@ -708,7 +879,8 @@ interface NewsSection {
 
 /**
  * @component NewsCarrouselComponent
- * @description Componente que muestra un carrusel de noticias. Permite filtrar las secciones según una consulta de búsqueda proporcionada por el SearchService.
+ * @description Componente que muestra un carrusel de noticias. 
+ * Permite filtrar las secciones según una consulta de búsqueda proporcionada por el SearchService.
  *
  * @example
  * &lt;app-news-carrousel&gt;&lt;/app-news-carrousel&gt;
@@ -716,14 +888,14 @@ interface NewsSection {
 @Component({
   selector: &#x27;app-news-carrousel&#x27;,
   standalone: true,
-  // Se importan módulos y componentes necesarios para el funcionamiento del componente.
   imports: [CommonModule, AlbunComponent],
   templateUrl: &#x27;./news-carrousel.component.html&#x27;,
   styleUrls: [&#x27;./news-carrousel.component.css&#x27;]
 })
 export class NewsCarrouselComponent implements OnInit, OnDestroy {
   /**
-   * Secciones de noticias predeterminadas que se muestran en el carrusel.
+   * @property {NewsSection[]} sections
+   * @description Secciones de noticias predeterminadas que se muestran en el carrusel.
    */
   sections: NewsSection[] &#x3D; [
     {
@@ -731,21 +903,25 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
       items: [
         {
           description: &#x27;NVIDIA lanza nueva GPU RTX 5090 con rendimiento un 70% superior a la generación anterior.&#x27;,
+          fullDescription: &#x27;NVIDIA acaba de presentar su nueva tarjeta gráfica RTX 5090, que promete ser un salto significativo en el rendimiento, ofreciendo un 70% más de poder de procesamiento en comparación con la generación anterior. Esto representa una mejora revolucionaria para los gamers y los profesionales del diseño gráfico.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (6) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Samsung presenta pantallas OLED transparentes para dispositivos móviles.&#x27;,
+          fullDescription: &#x27;Samsung ha anunciado un avance importante en la tecnología de pantallas OLED, revelando pantallas transparentes que podrían revolucionar los dispositivos móviles en los próximos años. Estas pantallas permitirían integrar características innovadoras, como la visualización de datos a través de superficies parcialmente transparentes.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (7) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;Microsoft anuncia Windows 12 con integración nativa de IA para 2025.&#x27;,
+          fullDescription: &#x27;Microsoft ha revelado su plan para Windows 12, una versión revolucionaria de su sistema operativo que integrará inteligencia artificial de forma nativa para mejorar la productividad, la seguridad y la personalización. Con el lanzamiento previsto para 2025, esta nueva versión promete ser un cambio radical en la experiencia de usuario.&#x27;,
           imageUrl: &#x27;../../../../assets/1418906 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;PlayStation 6 revela tecnología de carga instantánea de juegos.&#x27;,
+          fullDescription: &#x27;Sony ha presentado una de las características más esperadas para su futura consola PlayStation 6: la tecnología de carga instantánea de juegos. Esta tecnología permitirá que los jugadores se sumerjan en sus títulos favoritos sin largas esperas, mejorando la experiencia general de juego.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (8) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -756,21 +932,25 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
       items: [
         {
           description: &#x27;Primer ordenador cuántico comercial supera los 1000 qubits de potencia.&#x27;,
+          fullDescription: &#x27;El primer ordenador cuántico comercial ha superado los 1000 qubits, una hazaña que coloca la computación cuántica un paso más cerca de ser una herramienta viable para resolver problemas complejos que los ordenadores tradicionales no pueden abordar.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (9) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Baterías de estado sólido prometen autonomías de 1500 km para coches eléctricos.&#x27;,
+          fullDescription: &#x27;Las nuevas baterías de estado sólido están revolucionando el mercado de los vehículos eléctricos, ofreciendo una autonomía de hasta 1500 km con una sola carga. Este avance podría cambiar la industria automotriz y resolver uno de los mayores desafíos de los coches eléctricos actuales.&#x27;,
           imageUrl: &#x27;../../../../assets/R (2) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;IA logra diagnóstico médico con 99% de precisión en pruebas clínicas.&#x27;,
+          fullDescription: &#x27;Una nueva inteligencia artificial ha logrado un 99% de precisión en diagnósticos médicos durante pruebas clínicas, lo que representa un avance significativo para la medicina moderna, permitiendo diagnósticos rápidos y fiables con el apoyo de la tecnología.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (10) 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;Nanorobots médicos capaces de destruir células cancerígenas en pruebas in vivo.&#x27;,
+          fullDescription: &#x27;Los nanorobots médicos, desarrollados para destruir células cancerígenas de manera precisa, están demostrando resultados prometedores en pruebas in vivo. Este avance podría revolucionar el tratamiento del cáncer al permitir terapias más selectivas y menos invasivas.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (11) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -781,21 +961,25 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
       items: [
         {
           description: &#x27;Ciberataque global afecta a redes bancarias: recomendaciones de seguridad.&#x27;,
+          fullDescription: &#x27;Un ciberataque global ha afectado a redes bancarias de todo el mundo, exponiendo vulnerabilidades importantes. Los expertos recomiendan adoptar medidas de seguridad adicionales, como la autenticación multifactorial y el monitoreo constante de las transacciones.&#x27;,
           imageUrl: &#x27;../../../../assets/R (3) 1.svg&#x27;,
           time: &#x27;9 mins&#x27;
         },
         {
           description: &#x27;Tesla presenta nuevo modelo de auto volador con autonomía de 500 km.&#x27;,
+          fullDescription: &#x27;Tesla ha dado a conocer su nuevo modelo de auto volador, un vehículo eléctrico capaz de volar y que promete una autonomía de 500 km. Este modelo está destinado a cambiar la forma en que nos desplazamos, abriendo nuevas posibilidades para el transporte aéreo urbano.&#x27;,
           imageUrl: &#x27;../../../../assets/R (4) 1.svg&#x27;,
           time: &#x27;12 mins&#x27;
         },
         {
           description: &#x27;Apple desarrolla tecnología de carga inalámbrica a distancia hasta 5 metros.&#x27;,
+          fullDescription: &#x27;Apple ha anunciado avances en su tecnología de carga inalámbrica, permitiendo cargar dispositivos a una distancia de hasta 5 metros. Este avance podría transformar la forma en que cargamos nuestros dispositivos, eliminando la necesidad de cables.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (12) 1.svg&#x27;,
           time: &#x27;15 mins&#x27;
         },
         {
           description: &#x27;Starlink alcanza cobertura global de internet satelital de alta velocidad.&#x27;,
+          fullDescription: &#x27;Starlink, el proyecto de internet satelital de SpaceX, ha alcanzado una cobertura global, ofreciendo conexión a internet de alta velocidad en lugares remotos del planeta. Este avance abre nuevas oportunidades para la educación y el acceso a la información en áreas desatendidas.&#x27;,
           imageUrl: &#x27;../../../../assets/OIP (13) 1.svg&#x27;,
           time: &#x27;20 mins&#x27;
         }
@@ -804,27 +988,39 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
   ];
 
   /**
-   * Secciones filtradas según la consulta de búsqueda.
+   * @property {NewsSection[]} filteredSections
+   * @description Secciones filtradas según la consulta de búsqueda.
    */
   filteredSections: NewsSection[] &#x3D; [];
 
   /**
-   * Suscripción al observable de búsqueda para actualizar la vista cuando se emite un nuevo valor.
+   * @property {Subscription} searchSubscription
+   * @description Suscripción al observable de búsqueda para actualizar la vista cuando se emite un nuevo valor.
    */
   private searchSubscription!: Subscription;
 
   /**
-   * Constructor del componente.
-   *
-   * @param searchService - Servicio para gestionar la consulta de búsqueda.
+   * @property {NewsItem | null} selectedNewsItem
+   * @description Noticia seleccionada para mostrar en el modal.
+   */
+  selectedNewsItem: NewsItem | null &#x3D; null;
+
+  /**
+   * @property {boolean} showModal
+   * @description Indica si el modal de noticias está abierto o cerrado.
+   */
+  showModal: boolean &#x3D; false;
+
+  /**
+   * @constructor
+   * @param {SearchService} searchService - Servicio de búsqueda que emite los términos ingresados por el usuario.
    */
   constructor(private searchService: SearchService) {}
 
   /**
-   * Método de ciclo de vida que se ejecuta al inicializar el componente.
-   *
-   * - Inicializa las secciones filtradas.
-   * - Se suscribe al observable del servicio de búsqueda para filtrar las secciones en tiempo real.
+   * @method ngOnInit
+   * @description Método del ciclo de vida de Angular que se ejecuta al inicializar el componente.
+   * Se suscribe al servicio de búsqueda y carga las secciones iniciales.
    */
   ngOnInit(): void {
     this.filteredSections &#x3D; this.sections;
@@ -834,9 +1030,37 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Filtra las secciones de noticias en función de la consulta de búsqueda.
-   *
-   * @param query - Texto de búsqueda para filtrar las descripciones de los elementos de noticias.
+   * @method openNewsModal
+   * @description Abre el modal con los detalles de la noticia seleccionada.
+   * @param {NewsItem} item - Noticia seleccionada por el usuario.
+   */
+  openNewsModal(item: NewsItem): void {
+    this.selectedNewsItem &#x3D; item;
+    this.showModal &#x3D; true;
+  }
+
+  /**
+   * @method closeNewsModal
+   * @description Cierra el modal de la noticia.
+   */
+  closeNewsModal(): void {
+    this.selectedNewsItem &#x3D; null;
+    this.showModal &#x3D; false;
+  }
+
+  /**
+   * @method ngOnDestroy
+   * @description Método del ciclo de vida de Angular que se ejecuta antes de destruir el componente.
+   * Se encarga de cancelar la suscripción al servicio de búsqueda para evitar fugas de memoria.
+   */
+  ngOnDestroy(): void {
+    this.searchSubscription.unsubscribe();
+  }
+
+  /**
+   * @method filterSections
+   * @description Filtra las secciones de noticias en función del término de búsqueda ingresado.
+   * @param {string} query - Término de búsqueda ingresado por el usuario.
    */
   filterSections(query: string): void {
     if (!query) {
@@ -853,42 +1077,108 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
       }))
       .filter(section &#x3D;&gt; section.items.length &gt; 0);
   }
-
-  /**
-   * Método de ciclo de vida que se ejecuta al destruir el componente.
-   *
-   * - Se encarga de cancelar la suscripción al observable de búsqueda para evitar fugas de memoria.
-   */
-  ngOnDestroy(): void {
-    this.searchSubscription.unsubscribe();
-  }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div *ngFor&#x3D;&quot;let section of filteredSections&quot;&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!--
+  @description Itera sobre la lista de secciones filtradas y genera su contenido dinámicamente.
+--&gt;
+&lt;div *ngFor&#x3D;&quot;let section of filteredSections&quot;&gt;
+  &lt;!--
+    @description Título de la sección de noticias.
+    @binding section.title - Contiene el título de la sección.
+  --&gt;
   &lt;h1&gt;{{ section.title }}&lt;/h1&gt;
+
+  &lt;!--
+    @description Contenedor con desplazamiento horizontal para organizar los elementos.
+    @class scroll-container - Aplica estilos para permitir el desplazamiento horizontal.
+  --&gt;
   &lt;div class&#x3D;&quot;scroll-container&quot;&gt;
+    &lt;!--
+      @description Itera sobre los elementos de la sección y genera tarjetas para cada noticia.
+      @binding section.items - Lista de noticias dentro de la sección.
+    --&gt;
     &lt;div class&#x3D;&quot;col&quot; *ngFor&#x3D;&quot;let item of section.items&quot;&gt;
-      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
-        &lt;!-- Se utiliza un elemento SVG para la imagen --&gt;
+      &lt;!--
+        @description Tarjeta que representa una noticia. Es clickeable para abrir el modal.
+        @binding item - Contiene la información de la noticia.
+        @event (click) - Llama a openNewsModal(item) para mostrar los detalles en un modal.
+      --&gt;
+      &lt;div class&#x3D;&quot;card shadow-lg h-100&quot; (click)&#x3D;&quot;openNewsModal(item)&quot; style&#x3D;&quot;cursor: pointer;&quot;&gt;
+        &lt;!--
+          @description Contenedor SVG para la imagen con fondo oscuro de respaldo.
+          @binding item.description - Se usa como etiqueta aria-label para accesibilidad.
+          @binding item.imageUrl - Fuente de la imagen de la noticia.
+        --&gt;
         &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot;
              xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; role&#x3D;&quot;img&quot; 
              [attr.aria-label]&#x3D;&quot;item.description&quot;
              preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
+          &lt;!--
+            @description Fondo oscuro en caso de que la imagen no se cargue.
+          --&gt;
           &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;&gt;&lt;/rect&gt;
-          &lt;image [attr.href]&#x3D;&quot;item.imageUrl&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot;
-                 preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;&gt;&lt;/image&gt;
+          &lt;!--
+            @description Imagen de la noticia cargada dinámicamente.
+          --&gt;
+          &lt;image [attr.href]&#x3D;&quot;item.imageUrl&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;&gt;&lt;/image&gt;
         &lt;/svg&gt;
+
+        &lt;!--
+          @description Cuerpo de la tarjeta que muestra la descripción y el tiempo de publicación.
+        --&gt;
         &lt;div class&#x3D;&quot;card-body&quot;&gt;
+          &lt;!--
+            @description Texto descriptivo de la noticia.
+            @binding item.description - Contiene un resumen de la noticia.
+          --&gt;
           &lt;p class&#x3D;&quot;card-text&quot;&gt;{{ item.description }}&lt;/p&gt;
           &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
+            &lt;!--
+              @description Muestra el tiempo transcurrido desde la publicación.
+              @binding item.time - Tiempo en minutos u horas desde la publicación.
+            --&gt;
             &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;{{ item.time }}&lt;/small&gt;
           &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!--
+  @description Modal para mostrar los detalles de la noticia seleccionada.
+  @condition Se muestra solo si showModal es verdadero.
+--&gt;
+&lt;div *ngIf&#x3D;&quot;showModal&quot; class&#x3D;&quot;modal-overlay&quot;&gt;
+  &lt;div class&#x3D;&quot;modal-content&quot;&gt;
+    &lt;!--
+      @description Botón para cerrar el modal.
+      @event (click) - Llama a closeNewsModal() para cerrar el modal.
+    --&gt;
+    &lt;button class&#x3D;&quot;close-button&quot; (click)&#x3D;&quot;closeNewsModal()&quot;&gt;X&lt;/button&gt;
+    
+    &lt;!--
+      @description Título de la noticia seleccionada.
+      @binding selectedNewsItem?.description - Muestra el título de la noticia en el modal.
+    --&gt;
+    &lt;h2&gt;{{ selectedNewsItem?.description }}&lt;/h2&gt;
+    
+    &lt;!--
+      @description Imagen asociada a la noticia seleccionada.
+      @binding selectedNewsItem?.imageUrl - Fuente de la imagen mostrada en el modal.
+    --&gt;
+    &lt;img [src]&#x3D;&quot;selectedNewsItem?.imageUrl&quot; alt&#x3D;&quot;Imagen de la noticia&quot; class&#x3D;&quot;modal-image&quot;&gt;
+    
+    &lt;!--
+      @description Información adicional de la noticia, incluyendo el tiempo transcurrido y la descripción completa.
+    --&gt;
+    &lt;p&gt;&lt;strong&gt;Publicado hace:&lt;/strong&gt; {{ selectedNewsItem?.time }}&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;Descripción completa:&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;{{ selectedNewsItem?.fullDescription }}&lt;/p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -925,7 +1215,64 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
   }
   h1{
     text-align: center;
-}</code></pre>
+
+}
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px; /* Agrega un poco de margen interno para evitar que el modal toque los bordes */
+}
+
+.modal-content {
+  background: white;
+  padding: 30px; /* Aumenta el espaciado interno */
+  border-radius: 10px;
+  text-align: center;
+  max-width: 550px; /* Ligeramente más ancho */
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+  position: relative;
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  margin: 20px 0; /* Aumenta el margen superior e inferior */
+  border-radius: 5px; /* Añade bordes redondeados para una mejor estética */
+}
+
+.modal-content p {
+  margin: 15px 0; /* Separa más el texto dentro del modal */
+  font-size: 18px; /* Aumenta el tamaño de la fuente */
+  line-height: 1.6; /* Mejora la legibilidad del texto */
+}
+
+.close-button {
+  position: absolute;
+  top: -7%;
+  right: -8%;
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 15px; /* Botón más grande para facilitar el cierre */
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 100%;
+  transition: background 0.3s ease;
+}
+
+.close-button:hover {
+  background: darkred; /* Efecto hover para mejorar la experiencia de usuario */
+}
+p{text-align: justify;}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -953,8 +1300,8 @@ export class NewsCarrouselComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngFor="let section of filteredSections">  <h1>{{ section.title }}</h1>  <div class="scroll-container">    <div class="col" *ngFor="let item of section.items">      <div class="card shadow-lg h-100">        <!-- Se utiliza un elemento SVG para la imagen -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"             xmlns="http://www.w3.org/2000/svg" role="img"              [attr.aria-label]="item.description"             preserveAspectRatio="xMidYMid slice" focusable="false">          <rect width="100%" height="100%" fill="#2d3035"></rect>          <image [attr.href]="item.imageUrl" width="100%" height="100%"                 preserveAspectRatio="xMidYMid slice"></image>        </svg>        <div class="card-body">          <p class="card-text">{{ item.description }}</p>          <div class="d-flex justify-content-between align-items-center">            <small class="text-body-secondary">{{ item.time }}</small>          </div>        </div>      </div>    </div>  </div></div></div>'
-    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AlbunComponent', 'selector': 'app-albun'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'FeauturesComponent', 'selector': 'app-feautures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsageComponent', 'selector': 'app-newsage'},{'name': 'NewsCarrouselComponent', 'selector': 'app-news-carrousel'},{'name': 'TeamComponent', 'selector': 'app-team'}];
+        var COMPONENT_TEMPLATE = '<div><!--  @description Itera sobre la lista de secciones filtradas y genera su contenido dinámicamente.--><div *ngFor="let section of filteredSections">  <!--    @description Título de la sección de noticias.    @binding section.title - Contiene el título de la sección.  -->  <h1>{{ section.title }}</h1>  <!--    @description Contenedor con desplazamiento horizontal para organizar los elementos.    @class scroll-container - Aplica estilos para permitir el desplazamiento horizontal.  -->  <div class="scroll-container">    <!--      @description Itera sobre los elementos de la sección y genera tarjetas para cada noticia.      @binding section.items - Lista de noticias dentro de la sección.    -->    <div class="col" *ngFor="let item of section.items">      <!--        @description Tarjeta que representa una noticia. Es clickeable para abrir el modal.        @binding item - Contiene la información de la noticia.        @event (click) - Llama a openNewsModal(item) para mostrar los detalles en un modal.      -->      <div class="card shadow-lg h-100" (click)="openNewsModal(item)" style="cursor: pointer;">        <!--          @description Contenedor SVG para la imagen con fondo oscuro de respaldo.          @binding item.description - Se usa como etiqueta aria-label para accesibilidad.          @binding item.imageUrl - Fuente de la imagen de la noticia.        -->        <svg class="bd-placeholder-img card-img-top" width="100%" height="400"             xmlns="http://www.w3.org/2000/svg" role="img"              [attr.aria-label]="item.description"             preserveAspectRatio="xMidYMid slice" focusable="false">          <!--            @description Fondo oscuro en caso de que la imagen no se cargue.          -->          <rect width="100%" height="100%" fill="#2d3035"></rect>          <!--            @description Imagen de la noticia cargada dinámicamente.          -->          <image [attr.href]="item.imageUrl" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"></image>        </svg>        <!--          @description Cuerpo de la tarjeta que muestra la descripción y el tiempo de publicación.        -->        <div class="card-body">          <!--            @description Texto descriptivo de la noticia.            @binding item.description - Contiene un resumen de la noticia.          -->          <p class="card-text">{{ item.description }}</p>          <div class="d-flex justify-content-between align-items-center">            <!--              @description Muestra el tiempo transcurrido desde la publicación.              @binding item.time - Tiempo en minutos u horas desde la publicación.            -->            <small class="text-body-secondary">{{ item.time }}</small>          </div>        </div>      </div>    </div>  </div></div><!--  @description Modal para mostrar los detalles de la noticia seleccionada.  @condition Se muestra solo si showModal es verdadero.--><div *ngIf="showModal" class="modal-overlay">  <div class="modal-content">    <!--      @description Botón para cerrar el modal.      @event (click) - Llama a closeNewsModal() para cerrar el modal.    -->    <button class="close-button" (click)="closeNewsModal()">X</button>        <!--      @description Título de la noticia seleccionada.      @binding selectedNewsItem?.description - Muestra el título de la noticia en el modal.    -->    <h2>{{ selectedNewsItem?.description }}</h2>        <!--      @description Imagen asociada a la noticia seleccionada.      @binding selectedNewsItem?.imageUrl - Fuente de la imagen mostrada en el modal.    -->    <img [src]="selectedNewsItem?.imageUrl" alt="Imagen de la noticia" class="modal-image">        <!--      @description Información adicional de la noticia, incluyendo el tiempo transcurrido y la descripción completa.    -->    <p><strong>Publicado hace:</strong> {{ selectedNewsItem?.time }}</p>    <p><strong>Descripción completa:</strong></p>    <p>{{ selectedNewsItem?.fullDescription }}</p>  </div></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AlbunComponent', 'selector': 'app-albun'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'DescargaprincipalComponent', 'selector': 'app-descargaprincipal'},{'name': 'FeauturesComponent', 'selector': 'app-feautures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariodriverComponent', 'selector': 'app-formulariodriver'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsageComponent', 'selector': 'app-newsage'},{'name': 'NewsCarrouselComponent', 'selector': 'app-news-carrousel'},{'name': 'SupportFormComponent', 'selector': 'app-support-form'},{'name': 'SupportpageComponent', 'selector': 'app-supportpage'},{'name': 'TeamComponent', 'selector': 'app-team'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'NewsCarrouselComponent'};
 </script>

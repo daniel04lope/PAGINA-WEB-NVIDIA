@@ -1,0 +1,832 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nvidia documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">nvidia documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  SupportFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/support/Components/support-form/support-form.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Permite que los usuarios ingresen su nombre, correo electrónico, asunto y una descripción del problema para solicitar soporte.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">&lt;app-support-form&gt;&lt;/app-support-form&gt;</code></pre></div>
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-support-form</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>ReactiveFormsModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./support-form.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./support-form.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#supportForm" >supportForm</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onSubmit" >onSubmit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: FormBuilder)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/support/Components/support-form/support-form.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code>FormBuilder</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <ul>
+<li>Inyecta el servicio FormBuilder para construir los formularios reactivos.</li>
+</ul>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/support/Components/support-form/support-form.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>En este caso, se crea y configura el formulario con las validaciones necesarias.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSubmit"></a>
+                    <span class="name">
+                        <span ><b>onSubmit</b></span>
+                        <a href="#onSubmit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSubmit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="74"
+                                    class="link-to-prism">src/app/support/Components/support-form/support-form.component.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Si el formulario es válido, se muestra un mensaje de éxito y el formulario se reinicia.
+Si el formulario no es válido, se marcan todos los controles como tocados para que se muestren los errores.</p>
+</div>
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="supportForm"></a>
+                    <span class="name">
+                        <span ><b>supportForm</b></span>
+                        <a href="#supportForm"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>FormGroup</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/support/Components/support-form/support-form.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Es utilizado para validar y enviar la solicitud de soporte.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from &#x27;@angular/forms&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+/**
+ * @component SupportFormComponent
+ * @description Componente para mostrar un formulario de soporte al usuario.
+ * Permite que los usuarios ingresen su nombre, correo electrónico, asunto y una descripción del problema para solicitar soporte.
+ *
+ * @example
+ * &lt;app-support-form&gt;&lt;/app-support-form&gt;
+ */
+@Component({
+  selector: &#x27;app-support-form&#x27;,
+  standalone: true, // Este componente es independiente y no requiere un módulo Angular tradicional.
+  imports: [CommonModule, ReactiveFormsModule], // Importa CommonModule y ReactiveFormsModule para trabajar con formularios reactivos.
+  templateUrl: &#x27;./support-form.component.html&#x27;, // Archivo de plantilla asociado.
+  styleUrls: [&#x27;./support-form.component.css&#x27;] // Archivo de estilos asociado.
+})
+export class SupportFormComponent implements OnInit {
+  
+  /**
+   * @property {FormGroup} supportForm
+   * @description Formulario reactivo que contiene los campos de nombre, correo electrónico, asunto y descripción del problema.
+   * Es utilizado para validar y enviar la solicitud de soporte.
+   */
+  supportForm!: FormGroup;
+
+  /**
+   * @constructor
+   * @param {FormBuilder} fb - Inyecta el servicio FormBuilder para construir los formularios reactivos.
+   */
+  constructor(private fb: FormBuilder) {}
+
+  /**
+   * @method ngOnInit
+   * @description Método del ciclo de vida de Angular que se ejecuta al inicializar el componente.
+   * En este caso, se crea y configura el formulario con las validaciones necesarias.
+   */
+  ngOnInit(): void {
+    this.supportForm &#x3D; this.fb.group({
+      /**
+       * Campo que captura el nombre del usuario.
+       * Se requiere y debe tener al menos 3 caracteres.
+       */
+      name: [&#x27;&#x27;, [Validators.required, Validators.minLength(3)]],
+      
+      /**
+       * Campo que captura el correo electrónico del usuario.
+       * Se requiere y debe ser un correo electrónico válido.
+       */
+      email: [&#x27;&#x27;, [Validators.required, Validators.email]],
+      
+      /**
+       * Campo que captura el asunto de la solicitud de soporte.
+       * Se requiere.
+       */
+      subject: [&#x27;&#x27;, Validators.required],
+      
+      /**
+       * Campo que captura una descripción detallada del problema.
+       * Se requiere y debe tener al menos 10 caracteres.
+       */
+      description: [&#x27;&#x27;, [Validators.required, Validators.minLength(10)]]
+    });
+  }
+
+  /**
+   * @method onSubmit
+   * @description Método que se ejecuta cuando el usuario envía el formulario.
+   * Si el formulario es válido, se muestra un mensaje de éxito y el formulario se reinicia.
+   * Si el formulario no es válido, se marcan todos los controles como tocados para que se muestren los errores.
+   */
+  onSubmit(): void {
+    // Verifica si el formulario es válido
+    if (this.supportForm.valid) {
+      console.log(&#x27;Formulario enviado:&#x27;, this.supportForm.value);
+      alert(&#x27;¡Formulario enviado con éxito!&#x27;);
+      this.supportForm.reset(); // Resetea el formulario después de enviarlo
+    } else {
+      // Marca todos los controles como tocados para mostrar los errores de validación
+      Object.values(this.supportForm.controls).forEach(control &#x3D;&gt; {
+        control.markAsTouched();
+      });
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;formulario&quot;&gt;
+  &lt;!-- Formulario que utiliza un FormGroup de Angular para enlazar con el modelo de datos --&gt;
+  &lt;form [formGroup]&#x3D;&quot;supportForm&quot; (ngSubmit)&#x3D;&quot;onSubmit()&quot;&gt;
+    
+    &lt;!-- Título principal del formulario --&gt;
+    &lt;h1&gt;CONTACTANOS&lt;/h1&gt;
+
+    &lt;!-- Sección de nombre --&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;!-- Etiqueta para el campo nombre --&gt;
+      &lt;label for&#x3D;&quot;name&quot;&gt;Nombre:&lt;/label&gt;
+      
+      &lt;!-- Campo de entrada para el nombre, vinculado al control &#x27;name&#x27; del FormGroup --&gt;
+      &lt;input
+        type&#x3D;&quot;text&quot;
+        id&#x3D;&quot;name&quot;
+        formControlName&#x3D;&quot;name&quot;
+        placeholder&#x3D;&quot;Ingrese su nombre&quot;
+      /&gt;
+      
+      &lt;!-- Mensaje de error si el campo &#x27;name&#x27; es inválido y ha sido tocado o sucio --&gt;
+      &lt;div class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;supportForm.get(&#x27;name&#x27;)?.invalid &amp;&amp; (supportForm.get(&#x27;name&#x27;)?.dirty || supportForm.get(&#x27;name&#x27;)?.touched)&quot;&gt;
+        &lt;!-- Mensaje de error cuando el campo &#x27;name&#x27; es requerido pero está vacío --&gt;
+        &lt;small *ngIf&#x3D;&quot;supportForm.get(&#x27;name&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;
+          El nombre es requerido.
+        &lt;/small&gt;
+        &lt;!-- Mensaje de error cuando el campo &#x27;name&#x27; tiene menos de 3 caracteres --&gt;
+        &lt;small *ngIf&#x3D;&quot;supportForm.get(&#x27;name&#x27;)?.errors?.[&#x27;minlength&#x27;]&quot;&gt;
+          El nombre debe tener al menos 3 caracteres.
+        &lt;/small&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Sección de correo electrónico --&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;!-- Etiqueta para el campo correo electrónico --&gt;
+      &lt;label for&#x3D;&quot;email&quot;&gt;Correo Electrónico:&lt;/label&gt;
+      
+      &lt;!-- Campo de entrada para el correo electrónico, vinculado al control &#x27;email&#x27; del FormGroup --&gt;
+      &lt;input
+        type&#x3D;&quot;email&quot;
+        id&#x3D;&quot;email&quot;
+        formControlName&#x3D;&quot;email&quot;
+        placeholder&#x3D;&quot;Ingrese su correo&quot;
+      /&gt;
+      
+      &lt;!-- Mensaje de error si el campo &#x27;email&#x27; es inválido y ha sido tocado o sucio --&gt;
+      &lt;div class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;supportForm.get(&#x27;email&#x27;)?.invalid &amp;&amp; (supportForm.get(&#x27;email&#x27;)?.dirty || supportForm.get(&#x27;email&#x27;)?.touched)&quot;&gt;
+        &lt;!-- Mensaje de error cuando el campo &#x27;email&#x27; es requerido pero está vacío --&gt;
+        &lt;small *ngIf&#x3D;&quot;supportForm.get(&#x27;email&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;
+          El correo es requerido.
+        &lt;/small&gt;
+        &lt;!-- Mensaje de error cuando el campo &#x27;email&#x27; no tiene un formato válido --&gt;
+        &lt;small *ngIf&#x3D;&quot;supportForm.get(&#x27;email&#x27;)?.errors?.[&#x27;email&#x27;]&quot;&gt;
+          El formato del correo no es válido.
+        &lt;/small&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Sección de asunto --&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;!-- Etiqueta para el campo asunto --&gt;
+      &lt;label for&#x3D;&quot;subject&quot;&gt;Asunto:&lt;/label&gt;
+      
+      &lt;!-- Campo de entrada para el asunto, vinculado al control &#x27;subject&#x27; del FormGroup --&gt;
+      &lt;input
+        type&#x3D;&quot;text&quot;
+        id&#x3D;&quot;subject&quot;
+        formControlName&#x3D;&quot;subject&quot;
+        placeholder&#x3D;&quot;Asunto del soporte&quot;
+      /&gt;
+      
+      &lt;!-- Mensaje de error si el campo &#x27;subject&#x27; es inválido y ha sido tocado o sucio --&gt;
+      &lt;div class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;supportForm.get(&#x27;subject&#x27;)?.invalid &amp;&amp; (supportForm.get(&#x27;subject&#x27;)?.dirty || supportForm.get(&#x27;subject&#x27;)?.touched)&quot;&gt;
+        &lt;!-- Mensaje de error cuando el campo &#x27;subject&#x27; es requerido pero está vacío --&gt;
+        &lt;small *ngIf&#x3D;&quot;supportForm.get(&#x27;subject&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;
+          El asunto es requerido.
+        &lt;/small&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Sección de descripción --&gt;
+    &lt;div class&#x3D;&quot;form-group&quot;&gt;
+      &lt;!-- Etiqueta para el campo descripción --&gt;
+      &lt;label for&#x3D;&quot;description&quot;&gt;Descripción:&lt;/label&gt;
+      
+      &lt;!-- Campo de entrada para la descripción, vinculado al control &#x27;description&#x27; del FormGroup --&gt;
+      &lt;textarea
+        id&#x3D;&quot;description&quot;
+        formControlName&#x3D;&quot;description&quot;
+        placeholder&#x3D;&quot;Describe tu problema&quot;
+      &gt;&lt;/textarea&gt;
+      
+      &lt;!-- Mensaje de error si el campo &#x27;description&#x27; es inválido y ha sido tocado o sucio --&gt;
+      &lt;div class&#x3D;&quot;error&quot; *ngIf&#x3D;&quot;supportForm.get(&#x27;description&#x27;)?.invalid &amp;&amp; (supportForm.get(&#x27;description&#x27;)?.dirty || supportForm.get(&#x27;description&#x27;)?.touched)&quot;&gt;
+        &lt;!-- Mensaje de error cuando el campo &#x27;description&#x27; es requerido pero está vacío --&gt;
+        &lt;small *ngIf&#x3D;&quot;supportForm.get(&#x27;description&#x27;)?.errors?.[&#x27;required&#x27;]&quot;&gt;
+          La descripción es requerida.
+        &lt;/small&gt;
+        &lt;!-- Mensaje de error cuando el campo &#x27;description&#x27; tiene menos de 10 caracteres --&gt;
+        &lt;small *ngIf&#x3D;&quot;supportForm.get(&#x27;description&#x27;)?.errors?.[&#x27;minlength&#x27;]&quot;&gt;
+          La descripción debe tener al menos 10 caracteres.
+        &lt;/small&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Botón de envío del formulario --&gt;
+    &lt;!-- Se desactiva si el formulario es inválido --&gt;
+    &lt;button type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;supportForm.invalid&quot;&gt;
+      Enviar Soporte
+    &lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./support-form.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">form {
+  max-width: 800px; /* Aumenta el ancho máximo */
+  margin: 20px auto;
+  padding: 30px; /* Incrementa el padding */
+  background: #76B900;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 1.2rem; /* Incrementa el tamaño del texto */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Más espacio entre grupos */
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px; /* Aumenta el margen inferior */
+  font-size: 1.1rem; /* Aumenta el tamaño del texto del label */
+}
+
+input[type&#x3D;&quot;text&quot;],
+input[type&#x3D;&quot;email&quot;],
+textarea {
+  width: 100%;
+  padding: 12px; /* Más padding para inputs */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem; /* Aumenta el tamaño del texto */
+}
+
+button[type&#x3D;&quot;submit&quot;] {
+  padding: 15px 20px; /* Más padding en el botón */
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem; /* Aumenta el tamaño del texto */
+}
+
+button[type&#x3D;&quot;submit&quot;]:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+button[type&#x3D;&quot;submit&quot;]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 0.9rem; /* Ajusta el tamaño de las notificaciones de error */
+  margin-top: 5px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem; /* Aumenta el tamaño del título */
+  margin-bottom: 20px;
+}
+form{margin-bottom: 10%; margin-top: 5%; }
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="formulario">  <!-- Formulario que utiliza un FormGroup de Angular para enlazar con el modelo de datos -->  <form [formGroup]="supportForm" (ngSubmit)="onSubmit()">        <!-- Título principal del formulario -->    <h1>CONTACTANOS</h1>    <!-- Sección de nombre -->    <div class="form-group">      <!-- Etiqueta para el campo nombre -->      <label for="name">Nombre:</label>            <!-- Campo de entrada para el nombre, vinculado al control \'name\' del FormGroup -->      <input        type="text"        id="name"        formControlName="name"        placeholder="Ingrese su nombre"      />            <!-- Mensaje de error si el campo \'name\' es inválido y ha sido tocado o sucio -->      <div class="error" *ngIf="supportForm.get(\'name\')?.invalid && (supportForm.get(\'name\')?.dirty || supportForm.get(\'name\')?.touched)">        <!-- Mensaje de error cuando el campo \'name\' es requerido pero está vacío -->        <small *ngIf="supportForm.get(\'name\')?.errors?.[\'required\']">          El nombre es requerido.        </small>        <!-- Mensaje de error cuando el campo \'name\' tiene menos de 3 caracteres -->        <small *ngIf="supportForm.get(\'name\')?.errors?.[\'minlength\']">          El nombre debe tener al menos 3 caracteres.        </small>      </div>    </div>    <!-- Sección de correo electrónico -->    <div class="form-group">      <!-- Etiqueta para el campo correo electrónico -->      <label for="email">Correo Electrónico:</label>            <!-- Campo de entrada para el correo electrónico, vinculado al control \'email\' del FormGroup -->      <input        type="email"        id="email"        formControlName="email"        placeholder="Ingrese su correo"      />            <!-- Mensaje de error si el campo \'email\' es inválido y ha sido tocado o sucio -->      <div class="error" *ngIf="supportForm.get(\'email\')?.invalid && (supportForm.get(\'email\')?.dirty || supportForm.get(\'email\')?.touched)">        <!-- Mensaje de error cuando el campo \'email\' es requerido pero está vacío -->        <small *ngIf="supportForm.get(\'email\')?.errors?.[\'required\']">          El correo es requerido.        </small>        <!-- Mensaje de error cuando el campo \'email\' no tiene un formato válido -->        <small *ngIf="supportForm.get(\'email\')?.errors?.[\'email\']">          El formato del correo no es válido.        </small>      </div>    </div>    <!-- Sección de asunto -->    <div class="form-group">      <!-- Etiqueta para el campo asunto -->      <label for="subject">Asunto:</label>            <!-- Campo de entrada para el asunto, vinculado al control \'subject\' del FormGroup -->      <input        type="text"        id="subject"        formControlName="subject"        placeholder="Asunto del soporte"      />            <!-- Mensaje de error si el campo \'subject\' es inválido y ha sido tocado o sucio -->      <div class="error" *ngIf="supportForm.get(\'subject\')?.invalid && (supportForm.get(\'subject\')?.dirty || supportForm.get(\'subject\')?.touched)">        <!-- Mensaje de error cuando el campo \'subject\' es requerido pero está vacío -->        <small *ngIf="supportForm.get(\'subject\')?.errors?.[\'required\']">          El asunto es requerido.        </small>      </div>    </div>    <!-- Sección de descripción -->    <div class="form-group">      <!-- Etiqueta para el campo descripción -->      <label for="description">Descripción:</label>            <!-- Campo de entrada para la descripción, vinculado al control \'description\' del FormGroup -->      <textarea        id="description"        formControlName="description"        placeholder="Describe tu problema"      ></textarea>            <!-- Mensaje de error si el campo \'description\' es inválido y ha sido tocado o sucio -->      <div class="error" *ngIf="supportForm.get(\'description\')?.invalid && (supportForm.get(\'description\')?.dirty || supportForm.get(\'description\')?.touched)">        <!-- Mensaje de error cuando el campo \'description\' es requerido pero está vacío -->        <small *ngIf="supportForm.get(\'description\')?.errors?.[\'required\']">          La descripción es requerida.        </small>        <!-- Mensaje de error cuando el campo \'description\' tiene menos de 10 caracteres -->        <small *ngIf="supportForm.get(\'description\')?.errors?.[\'minlength\']">          La descripción debe tener al menos 10 caracteres.        </small>      </div>    </div>    <!-- Botón de envío del formulario -->    <!-- Se desactiva si el formulario es inválido -->    <button type="submit" [disabled]="supportForm.invalid">      Enviar Soporte    </button>  </form></div></div>'
+    var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AlbunComponent', 'selector': 'app-albun'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'DescargaprincipalComponent', 'selector': 'app-descargaprincipal'},{'name': 'FeauturesComponent', 'selector': 'app-feautures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariodriverComponent', 'selector': 'app-formulariodriver'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsageComponent', 'selector': 'app-newsage'},{'name': 'NewsCarrouselComponent', 'selector': 'app-news-carrousel'},{'name': 'SupportFormComponent', 'selector': 'app-support-form'},{'name': 'SupportpageComponent', 'selector': 'app-supportpage'},{'name': 'TeamComponent', 'selector': 'app-team'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'SupportFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'SupportFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

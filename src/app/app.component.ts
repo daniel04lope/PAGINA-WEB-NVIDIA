@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './main-page/Pages/home/home.component';
 import { FormsModule } from '@angular/forms';

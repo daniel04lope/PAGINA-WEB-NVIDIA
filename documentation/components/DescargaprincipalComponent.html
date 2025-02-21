@@ -89,7 +89,7 @@
   <li class="breadcrumb-item">Components</li>
   <li class="breadcrumb-item"
   >
-  AlbunComponent</li>
+  DescargaprincipalComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -106,6 +106,10 @@
                 role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
         </li>
         <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
             <a href="#tree" class="nav-link"
                 role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
         </li>
@@ -116,10 +120,19 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/main-page/Components/albun/albun.component.ts</code>
+    <code>src/app/downloads/Pages/descargaprincipal/descargaprincipal.component.ts</code>
 </p>
 
 
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>Este componente actúa como un contenedor que organiza la estructura de la página,
+incluyendo el encabezado, el formulario de descarga y el pie de página.</p>
+<b>Example :</b><div><pre class="line-numbers"><code class="language-html">```html
+&lt;app-descargaprincipal&gt;&lt;/app-descargaprincipal&gt;</code></pre></div><b>Example :</b><div><pre class="line-numbers"><code class="language-none"></code></pre></div>
+    </p>
 
 
 
@@ -142,7 +155,7 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-albun</code></td>
+                <td class="col-md-9"><code>app-descargaprincipal</code></td>
             </tr>
 
             <tr>
@@ -150,21 +163,29 @@
                 <td class="col-md-9"><code>true</code></td>
             </tr>
 
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                                <code><a href="../components/HeaderComponent.html" target="_self" >HeaderComponent</a></code>
+                                <code><a href="../components/FooterComponent.html" target="_self" >FooterComponent</a></code>
+                                <code><a href="../components/FormulariodriverComponent.html" target="_self" >FormulariodriverComponent</a></code>
+                </td>
+            </tr>
 
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./descargaprincipal.component.css</code></td>
+            </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./albun.component.html</code></td>
+                <td class="col-md-9"><code>./descargaprincipal.component.html</code></td>
             </tr>
 
 
 
-            <tr>
-                <td class="col-md-3">styleUrl</td>
-                <td class="col-md-9"><code>./albun.component.css</code></td>
-            </tr>
 
 
 
@@ -187,100 +208,83 @@
 
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { HeaderComponent } from &quot;../../../main-page/Components/header/header.component&quot;;
+import { FooterComponent } from &quot;../../../main-page/Components/footer/footer.component&quot;;
+import { FormulariodriverComponent } from &#x27;../../Components/formulariodriver/formulariodriver.component&#x27;;
 
 /**
- * @file AlbunComponent
- * @description Componente que muestra una galería de tarjetas de productos/servicios con imágenes y descripciones.
+ * @component DescargaprincipalComponent
+ * @description Componente principal de la página de descarga de drivers.
+ * Este componente actúa como un contenedor que organiza la estructura de la página,
+ * incluyendo el encabezado, el formulario de descarga y el pie de página.
+ * 
+ * @example
+ * &#x60;&#x60;&#x60;html
+ * &lt;app-descargaprincipal&gt;&lt;/app-descargaprincipal&gt;
+ * &#x60;&#x60;&#x60;
  */
-
 @Component({
-  selector: &#x27;app-albun&#x27;,
-  standalone: true,
-  imports: [],
-  templateUrl: &#x27;./albun.component.html&#x27;,
-  styleUrl: &#x27;./albun.component.css&#x27;
+  selector: &#x27;app-descargaprincipal&#x27;, // Selector del componente para su uso en plantillas
+  standalone: true, // Declarado como un componente independiente en Angular
+  imports: [
+    HeaderComponent, // Componente de encabezado que incluye navegación y branding
+    FooterComponent, // Componente de pie de página con información adicional y enlaces
+    FormulariodriverComponent, // Componente con el formulario para descargar drivers
+  ],
+  templateUrl: &#x27;./descargaprincipal.component.html&#x27;, // Plantilla HTML del componente
+  styleUrls: [&#x27;./descargaprincipal.component.css&#x27;] // Estilos CSS aplicados al componente
 })
-export class AlbunComponent {
-  // Este componente no tiene lógica asociada por ahora.
+export class DescargaprincipalComponent {
+  /**
+   * @description Este componente no contiene lógica adicional en este momento.
+   * Su propósito principal es organizar la estructura de la página de descarga.
+   */
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!--
-  @file Tarjetas
-  @description Componente visual que presenta una serie de tarjetas (productos o servicios), cada una con una imagen y una breve descripción.
+        <pre class="line-numbers"><code class="language-html">&lt;!-- 
+  @file descargaprincipal.component.html
+  @description Plantilla del componente DescargaprincipalComponent.
+  Contiene la estructura principal de la página de descarga de drivers, 
+  organizando los componentes de encabezado, formulario y pie de página.
 --&gt;
-&lt;div class&#x3D;&quot;album py-5&quot;&gt;
-    &lt;div class&#x3D;&quot;container-fluid&quot;&gt;
-      &lt;div class&#x3D;&quot;row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4&quot;&gt;
-        
-        &lt;!--
-          @card 1
-          @description Tarjeta que muestra una tarjeta gráfica NVIDIA con su descripción.
-        --&gt;
-        &lt;div class&#x3D;&quot;col&quot;&gt;
-          &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
-            &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; 
-                 role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Tarjeta gráfica NVIDIA&quot; preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
-              &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
-              &lt;image href&#x3D;&quot;assets/imagen11.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
-            &lt;/svg&gt;
-            &lt;div class&#x3D;&quot;card-body&quot;&gt;
-              &lt;p class&#x3D;&quot;card-text&quot;&gt;Experimenta velocidades de procesamiento incomparables y gráficos realistas que transforman la forma en que juegas y trabajas. Las tarjetas gráficas NVIDIA son la elección preferida de los profesionales y entusiastas por igual.&lt;/p&gt;
-              &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
-                &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;9 mins&lt;/small&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+
+&lt;div&gt;
+    &lt;!-- 
+      @description Componente de encabezado.
+      Contiene la barra de navegación y elementos principales de la cabecera.
+    --&gt;
+    &lt;app-header&gt;&lt;/app-header&gt;
   
-        &lt;!--
-          @card 2
-          @description Tarjeta que muestra las aplicaciones de la Inteligencia Artificial de NVIDIA.
-        --&gt;
-        &lt;div class&#x3D;&quot;col&quot;&gt;
-          &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
-            &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; 
-                 role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Inteligencia Artificial NVIDIA&quot; preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
-              &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
-              &lt;image href&#x3D;&quot;assets/imagen12.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
-            &lt;/svg&gt;
-            &lt;div class&#x3D;&quot;card-body&quot;&gt;
-              &lt;p class&#x3D;&quot;card-text&quot;&gt;Aprovecha el poder de la inteligencia artificial con nuestras plataformas de aprendizaje profundo. Desde la automatización de tareas hasta la creación de contenido, NVIDIA está a la vanguardia de la IA.&lt;/p&gt;
-              &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
-                &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;9 mins&lt;/small&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
+    &lt;!-- 
+      @description Componente de formulario de descarga de drivers.
+      Permite al usuario seleccionar y descargar los controladores adecuados.
+    --&gt;
+    &lt;app-formulariodriver&gt;&lt;/app-formulariodriver&gt;
   
-        &lt;!--
-          @card 3
-          @description Tarjeta que promueve la comunidad global de usuarios y desarrolladores de NVIDIA.
-        --&gt;
-        &lt;div class&#x3D;&quot;col&quot;&gt;
-          &lt;div class&#x3D;&quot;card shadow-lg h-100&quot;&gt;
-            &lt;svg class&#x3D;&quot;bd-placeholder-img card-img-top&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;400&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; 
-                 role&#x3D;&quot;img&quot; aria-label&#x3D;&quot;Comunidad NVIDIA&quot; preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot; focusable&#x3D;&quot;false&quot;&gt;
-              &lt;rect width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; fill&#x3D;&quot;#2d3035&quot;/&gt;
-              &lt;image href&#x3D;&quot;assets/imagen13.svg&quot; width&#x3D;&quot;100%&quot; height&#x3D;&quot;100%&quot; preserveAspectRatio&#x3D;&quot;xMidYMid slice&quot;/&gt;
-            &lt;/svg&gt;
-            &lt;div class&#x3D;&quot;card-body&quot;&gt;
-              &lt;p class&#x3D;&quot;card-text&quot;&gt;Únete a una comunidad global de usuarios y desarrolladores. Accede a recursos, tutoriales y soporte técnico para maximizar tu experiencia con nuestros productos.&lt;/p&gt;
-              &lt;div class&#x3D;&quot;d-flex justify-content-between align-items-center&quot;&gt;
-                &lt;small class&#x3D;&quot;text-body-secondary&quot;&gt;9 mins&lt;/small&gt;
-              &lt;/div&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-  
-      &lt;/div&gt;
-    &lt;/div&gt;
+    &lt;!-- 
+      @description Componente de pie de página.
+      Muestra información adicional, enlaces de contacto y políticas del sitio.
+    --&gt;
+    &lt;app-footer&gt;&lt;/app-footer&gt;
   &lt;/div&gt;
   </code></pre>
     </div>
 
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./descargaprincipal.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">div {
+    background: url(&#x27;../../../../assets/fondodescarga.jpg&#x27;) no-repeat center center fixed; /* Imagen de fondo */
+    background-size: cover; /* Ajusta la imagen para que ocupe todo el fondo */
+    margin: 0; /* Elimina márgenes del body si hay espacios blancos */
+    height: 100vh; /* Asegúrate de que el fondo cubra toda la altura de la ventana */
+  }
+  </code></pre>
+    </div>
 
     <div class="tab-pane fade " id="tree">
         <div id="tree-container"></div>
@@ -307,10 +311,10 @@ export class AlbunComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!--  @file Tarjetas  @description Componente visual que presenta una serie de tarjetas (productos o servicios), cada una con una imagen y una breve descripción.--><div class="album py-5">    <div class="container-fluid">      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">                <!--          @card 1          @description Tarjeta que muestra una tarjeta gráfica NVIDIA con su descripción.        -->        <div class="col">          <div class="card shadow-lg h-100">            <svg class="bd-placeholder-img card-img-top" width="100%" height="400" xmlns="http://www.w3.org/2000/svg"                  role="img" aria-label="Tarjeta gráfica NVIDIA" preserveAspectRatio="xMidYMid slice" focusable="false">              <rect width="100%" height="100%" fill="#2d3035"/>              <image href="assets/imagen11.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>            </svg>            <div class="card-body">              <p class="card-text">Experimenta velocidades de procesamiento incomparables y gráficos realistas que transforman la forma en que juegas y trabajas. Las tarjetas gráficas NVIDIA son la elección preferida de los profesionales y entusiastas por igual.</p>              <div class="d-flex justify-content-between align-items-center">                <small class="text-body-secondary">9 mins</small>              </div>            </div>          </div>        </div>          <!--          @card 2          @description Tarjeta que muestra las aplicaciones de la Inteligencia Artificial de NVIDIA.        -->        <div class="col">          <div class="card shadow-lg h-100">            <svg class="bd-placeholder-img card-img-top" width="100%" height="400" xmlns="http://www.w3.org/2000/svg"                  role="img" aria-label="Inteligencia Artificial NVIDIA" preserveAspectRatio="xMidYMid slice" focusable="false">              <rect width="100%" height="100%" fill="#2d3035"/>              <image href="assets/imagen12.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>            </svg>            <div class="card-body">              <p class="card-text">Aprovecha el poder de la inteligencia artificial con nuestras plataformas de aprendizaje profundo. Desde la automatización de tareas hasta la creación de contenido, NVIDIA está a la vanguardia de la IA.</p>              <div class="d-flex justify-content-between align-items-center">                <small class="text-body-secondary">9 mins</small>              </div>            </div>          </div>        </div>          <!--          @card 3          @description Tarjeta que promueve la comunidad global de usuarios y desarrolladores de NVIDIA.        -->        <div class="col">          <div class="card shadow-lg h-100">            <svg class="bd-placeholder-img card-img-top" width="100%" height="400" xmlns="http://www.w3.org/2000/svg"                  role="img" aria-label="Comunidad NVIDIA" preserveAspectRatio="xMidYMid slice" focusable="false">              <rect width="100%" height="100%" fill="#2d3035"/>              <image href="assets/imagen13.svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice"/>            </svg>            <div class="card-body">              <p class="card-text">Únete a una comunidad global de usuarios y desarrolladores. Accede a recursos, tutoriales y soporte técnico para maximizar tu experiencia con nuestros productos.</p>              <div class="d-flex justify-content-between align-items-center">                <small class="text-body-secondary">9 mins</small>              </div>            </div>          </div>        </div>        </div>    </div>  </div>  </div>'
+        var COMPONENT_TEMPLATE = '<div><!--   @file descargaprincipal.component.html  @description Plantilla del componente DescargaprincipalComponent.  Contiene la estructura principal de la página de descarga de drivers,   organizando los componentes de encabezado, formulario y pie de página.--><div>    <!--       @description Componente de encabezado.      Contiene la barra de navegación y elementos principales de la cabecera.    -->    <app-header></app-header>      <!--       @description Componente de formulario de descarga de drivers.      Permite al usuario seleccionar y descargar los controladores adecuados.    -->    <app-formulariodriver></app-formulariodriver>      <!--       @description Componente de pie de página.      Muestra información adicional, enlaces de contacto y políticas del sitio.    -->    <app-footer></app-footer>  </div>  </div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AlbunComponent', 'selector': 'app-albun'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'DescargaprincipalComponent', 'selector': 'app-descargaprincipal'},{'name': 'FeauturesComponent', 'selector': 'app-feautures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariodriverComponent', 'selector': 'app-formulariodriver'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsageComponent', 'selector': 'app-newsage'},{'name': 'NewsCarrouselComponent', 'selector': 'app-news-carrousel'},{'name': 'SupportFormComponent', 'selector': 'app-support-form'},{'name': 'SupportpageComponent', 'selector': 'app-supportpage'},{'name': 'TeamComponent', 'selector': 'app-team'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'AlbunComponent'};
+    var ACTUAL_COMPONENT = {'name': 'DescargaprincipalComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -356,7 +360,7 @@ export class AlbunComponent {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'AlbunComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'DescargaprincipalComponent.html';
             var MAX_SEARCH_RESULTS = 15;
        </script>
 

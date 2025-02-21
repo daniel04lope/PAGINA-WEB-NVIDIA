@@ -47,10 +47,10 @@ export class FormulariodriverComponent {
   private obtenerFileId(modelo: string, sistema: string): string | null {
     const fileMap: { [key: string]: string } = {
       'nvidia-windows': '1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2', // Cambia por IDs válidos
-      'nvidia-linux': '7G8H9I0J1K2L',
-      'amd-windows': '3M4N5O6P7Q8R',
-      'amd-linux': '9R8Q7P6O5N4M',
-      'intel-windows': '8A7B6C5D4E3F',
+      'nvidia-linux': '1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2',
+      'amd-windows': '1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2',
+      'amd-linux': '1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2',
+      'intel-windows': '1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2',
     };
 
     return fileMap[`${modelo.toLowerCase()}-${sistema.toLowerCase()}`] || null;

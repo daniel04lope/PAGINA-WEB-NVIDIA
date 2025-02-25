@@ -1,22 +1,11 @@
 <div class="descarga-container">
-  <!-- Formulario para la descarga de drivers -->
   <form (ngSubmit)="descargarDriver()" #driverForm="ngForm" class="form">
-    <!-- Título del formulario -->
     <h1>Descargar Drivers de Tarjetas Gráficas</h1>
 
-    <!-- Selección del modelo de tarjeta gráfica -->
     <div class="form-group">
       <label for="modelo">Modelo de Tarjeta Gráfica NVIDIA</label>
-      <select
-        id="modelo"
-        class="form-control"
-        [(ngModel)]="modeloSeleccionado"
-        name="modelo"
-        required
-      >
-        <!-- Opción por defecto -->
+      <select id="modelo" class="form-control" [(ngModel)]="modeloSeleccionado" name="modelo" required>
         <option value="" disabled selected>Selecciona el modelo</option>
-        <!-- Opciones disponibles para seleccionar el modelo de tarjeta gráfica -->
         <option value="rtx3090">GeForce RTX 3090</option>
         <option value="rtx3080">GeForce RTX 3080</option>
         <option value="rtx3070">GeForce RTX 3070</option>
@@ -26,39 +15,28 @@
         <option value="gtx1050">GeForce GTX 1050</option>
       </select>
     </div>
-<!-- Selección del sistema operativo -->
-<div class="form-group">
-  <label for="sistema">Sistema Operativo</label>
-  <select
-    id="sistema"
-    class="form-control"
-    [(ngModel)]="sistemaOperativoSeleccionado"
-    name="sistema"
-    required
-  >
-    <!-- Opción por defecto -->
-    <option value="" disabled selected>Selecciona el sistema operativo</option>
-    <!-- Opciones disponibles para seleccionar el sistema operativo -->
-    <option value="windows">Windows</option>
-    <option value="linux">Linux</option>
-    <option value="macos">MacOS</option>
-  </select>
-</div>
 
-
-    <!-- Botón de envío (descarga) -->
     <div class="form-group">
-      <button
-        type="submit"
-        class="btn btn-primary"
-        [disabled]="!modeloSeleccionado || !sistemaOperativoSeleccionado"
-      >
+      <label for="sistema">Sistema Operativo</label>
+      <select id="sistema" class="form-control" [(ngModel)]="sistemaOperativoSeleccionado" name="sistema" required>
+        <option value="" disabled selected>Selecciona el sistema operativo</option>
+        <option value="windows">Windows</option>
+        <option value="linux">Linux</option>
+        <option value="macos">MacOS</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary" [disabled]="!modeloSeleccionado || !sistemaOperativoSeleccionado">
         Descargar Driver
       </button>
     </div>
   </form>
 
-  <!-- Mensaje de error si ocurre un problema -->
+  <div *ngIf="descargando" class="download-message">
+    <p>📥 Su descarga ya se está ejecutando. Por favor, espere...</p>
+  </div>
+
   <div *ngIf="error" class="error-message">
     <p>{{ error }}</p>
   </div>

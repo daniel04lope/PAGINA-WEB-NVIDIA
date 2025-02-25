@@ -1,44 +1,49 @@
 form {
-  max-width: 800px; /* Aumenta el ancho máximo */
-  margin: 20px auto;
-  padding: 30px; /* Incrementa el padding */
+  max-width: 80%; /* Usa porcentaje para mejor adaptación */
+  margin: 5% auto; /* Centra el formulario y ajusta los márgenes */
+  padding: 5%; /* Espaciado adaptable */
   background: #76B900;
   border: 1px solid #ddd;
   border-radius: 20px;
-  font-size: 1.2rem; /* Incrementa el tamaño del texto */
+  font-size: 1.2rem;
 }
 
+/* Agrupación de los campos del formulario */
 .form-group {
-  margin-bottom: 20px; /* Más espacio entre grupos */
+  margin-bottom: 3%;
 }
 
+/* Etiquetas */
 label {
   display: block;
   font-weight: bold;
-  margin-bottom: 8px; /* Aumenta el margen inferior */
-  font-size: 1.1rem; /* Aumenta el tamaño del texto del label */
+  margin-bottom: 2%;
+  font-size: 1.1rem;
 }
 
+/* Inputs y textarea */
 input[type="text"],
 input[type="email"],
 textarea {
   width: 100%;
-  padding: 12px; /* Más padding para inputs */
+  padding: 1em;
   box-sizing: border-box;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 1rem; /* Aumenta el tamaño del texto */
+  font-size: 1rem;
 }
 
+/* Botón de envío */
 button[type="submit"] {
-  padding: 15px 20px; /* Más padding en el botón */
+  width: 100%; /* Botón adaptable al ancho */
+  padding: 1em 1.5em;
   background-color: #007bff;
   border: none;
   color: #fff;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  font-size: 1.1rem; /* Aumenta el tamaño del texto */
+  font-size: 1.1rem;
 }
 
 button[type="submit"]:hover:not(:disabled) {
@@ -50,17 +55,47 @@ button[type="submit"]:disabled {
   cursor: not-allowed;
 }
 
+/* Mensajes de error */
 .error {
   color: #d9534f;
-  font-size: 0.9rem; /* Ajusta el tamaño de las notificaciones de error */
+  font-size: 0.9rem;
   margin-top: 5px;
 }
 
+/* Título */
 h1 {
   text-align: center;
-  font-size: 2rem; /* Aumenta el tamaño del título */
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 5%;
 }
-form{margin-bottom: 10%; margin-top: 5%; }
 
+/* 📱 Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  form {
+    max-width: 90%;
+    padding: 8%;
+  }
 
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 1rem;
+    padding: 0.8em;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+    padding: 0.8em 1.2em;
+  }
+}
+
+/* 🖥️ Media Query para pantallas grandes */
+@media (min-width: 1200px) {
+  form {
+    max-width: 60%;
+  }
+}

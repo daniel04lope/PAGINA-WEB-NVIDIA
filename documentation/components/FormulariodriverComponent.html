@@ -346,8 +346,8 @@ y descargar el driver correspondiente.</p>
 
                     <tr>
                         <td class="col-md-4">
-                            <div class="io-line">Defined in <a href="" data-line="99"
-                                    class="link-to-prism">src/app/downloads/Components/formulariodriver/formulariodriver.component.ts:99</a></div>
+                            <div class="io-line">Defined in <a href="" data-line="106"
+                                    class="link-to-prism">src/app/downloads/Components/formulariodriver/formulariodriver.component.ts:106</a></div>
                         </td>
                     </tr>
 
@@ -716,7 +716,7 @@ export class FormulariodriverComponent {
       this.error &#x3D; null; // Limpia cualquier error previo
       // Llama al servicio para descargar el archivo correspondiente
       this.gpuInfoService.downloadDriver(fileId).subscribe(
-        (blob) &#x3D;&gt; this.descargarBlob(blob, &#x27;driver.txt&#x27;), // Si la descarga es exitosa, guarda el archivo
+        (blob) &#x3D;&gt; this.descargarBlob(blob, &#x27;driver.exe&#x27;), // Si la descarga es exitosa, guarda el archivo
         (error) &#x3D;&gt; {
           console.error(&#x27;Error al descargar el archivo:&#x27;, error); // Muestra el error en consola
           this.error &#x3D; &#x27;Ocurrió un error al intentar descargar el driver.&#x27;; // Establece el mensaje de error
@@ -737,22 +737,29 @@ export class FormulariodriverComponent {
   private obtenerFileId(modelo: string, sistema: string): string | null {
     // Mapa que asocia combinaciones de modelo y sistema operativo con los ID de los archivos en Google Drive
     const fileMap: { [key: string]: string } &#x3D; {
-      &#x27;rtx3090-windows&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;, // Reemplaza por los IDs reales
-      &#x27;rtx3090-linux&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;rtx3080-windows&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;rtx3080-linux&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;rtx3070-windows&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;rtx3070-linux&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;rtx3060-windows&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;rtx3060-linux&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;gtx1660-windows&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;gtx1660-linux&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;gtx1650-windows&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;gtx1650-linux&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;gtx1050-windows&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
-      &#x27;gtx1050-linux&#x27;: &#x27;1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2&#x27;,
+      &#x27;rtx3090-windows&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;rtx3090-linux&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;rtx3090-macos&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,  // Mac añadido
+      &#x27;rtx3080-windows&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;rtx3080-linux&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;rtx3080-macos&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,  // Mac añadido
+      &#x27;rtx3070-windows&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;rtx3070-linux&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;rtx3070-macos&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,  // Mac añadido
+      &#x27;rtx3060-windows&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;rtx3060-linux&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;rtx3060-macos&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,  // Mac añadido
+      &#x27;gtx1660-windows&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;gtx1660-linux&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;gtx1660-macos&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,  // Mac añadido
+      &#x27;gtx1650-windows&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;gtx1650-linux&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;gtx1650-macos&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,  // Mac añadido
+      &#x27;gtx1050-windows&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;gtx1050-linux&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,
+      &#x27;gtx1050-macos&#x27;: &#x27;1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe&#x27;,  // Mac añadido
     };
-  
+
     // Devuelve el ID del archivo basado en el modelo y sistema operativo seleccionados
     return fileMap[&#x60;${modelo.toLowerCase()}-${sistema.toLowerCase()}&#x60;] || null;
   }
@@ -770,6 +777,7 @@ export class FormulariodriverComponent {
     a.href &#x3D; url;
     a.download &#x3D; fileName; // Asigna el nombre al archivo descargado
     a.click(); // Simula un clic en el enlace para iniciar la descarga
+    
     window.URL.revokeObjectURL(url); // Revoca la URL del objeto una vez descargado
   }
 }
@@ -805,25 +813,25 @@ export class FormulariodriverComponent {
         &lt;option value&#x3D;&quot;gtx1050&quot;&gt;GeForce GTX 1050&lt;/option&gt;
       &lt;/select&gt;
     &lt;/div&gt;
+&lt;!-- Selección del sistema operativo --&gt;
+&lt;div class&#x3D;&quot;form-group&quot;&gt;
+  &lt;label for&#x3D;&quot;sistema&quot;&gt;Sistema Operativo&lt;/label&gt;
+  &lt;select
+    id&#x3D;&quot;sistema&quot;
+    class&#x3D;&quot;form-control&quot;
+    [(ngModel)]&#x3D;&quot;sistemaOperativoSeleccionado&quot;
+    name&#x3D;&quot;sistema&quot;
+    required
+  &gt;
+    &lt;!-- Opción por defecto --&gt;
+    &lt;option value&#x3D;&quot;&quot; disabled selected&gt;Selecciona el sistema operativo&lt;/option&gt;
+    &lt;!-- Opciones disponibles para seleccionar el sistema operativo --&gt;
+    &lt;option value&#x3D;&quot;windows&quot;&gt;Windows&lt;/option&gt;
+    &lt;option value&#x3D;&quot;linux&quot;&gt;Linux&lt;/option&gt;
+    &lt;option value&#x3D;&quot;macos&quot;&gt;MacOS&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
 
-    &lt;!-- Selección del sistema operativo --&gt;
-    &lt;div class&#x3D;&quot;form-group&quot;&gt;
-      &lt;label for&#x3D;&quot;sistema&quot;&gt;Sistema Operativo&lt;/label&gt;
-      &lt;select
-        id&#x3D;&quot;sistema&quot;
-        class&#x3D;&quot;form-control&quot;
-        [(ngModel)]&#x3D;&quot;sistemaOperativoSeleccionado&quot;
-        name&#x3D;&quot;sistema&quot;
-        required
-      &gt;
-        &lt;!-- Opción por defecto --&gt;
-        &lt;option value&#x3D;&quot;&quot; disabled selected&gt;Selecciona el sistema operativo&lt;/option&gt;
-        &lt;!-- Opciones disponibles para seleccionar el sistema operativo --&gt;
-        &lt;option value&#x3D;&quot;windows&quot;&gt;Windows&lt;/option&gt;
-        &lt;option value&#x3D;&quot;linux&quot;&gt;Linux&lt;/option&gt;
-        &lt;option value&#x3D;&quot;macos&quot;&gt;MacOS&lt;/option&gt;
-      &lt;/select&gt;
-    &lt;/div&gt;
 
     &lt;!-- Botón de envío (descarga) --&gt;
     &lt;div class&#x3D;&quot;form-group&quot;&gt;
@@ -850,75 +858,117 @@ export class FormulariodriverComponent {
                     <code>./formulariodriver.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">form {
-    max-width: 800px; /* Aumenta el ancho máximo */
-    margin: 20px auto;
-    padding: 30px; /* Incrementa el padding */
-    background: #76B900;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    font-size: 1.2rem; /* Incrementa el tamaño del texto */
+  max-width: 80%; /* Usa porcentaje en lugar de un valor fijo */
+  margin: 5% auto; /* Margen relativo para centrar */
+  padding: 5%; /* Padding relativo */
+  background: #76B900;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 1.2rem;
+}
+
+.form-group {
+  margin-bottom: 3%; /* Espaciado relativo */
+}
+
+label {
+  display: block; /* Cambia de fixed a block */
+  font-weight: bold;
+  margin-bottom: 1%; /* Espaciado relativo */
+  font-size: 1.1rem;
+}
+
+input[type&#x3D;&quot;text&quot;],
+input[type&#x3D;&quot;email&quot;],
+textarea {
+  width: 100%;
+  padding: 1.2em; /* Usa em para que se ajuste con el texto */
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button[type&#x3D;&quot;submit&quot;] {
+  padding: 1em 1.5em; /* Padding en em */
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+  width: 100%; /* Hace el botón responsive */
+}
+
+button[type&#x3D;&quot;submit&quot;]:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+button[type&#x3D;&quot;submit&quot;]:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #d9534f;
+  font-size: 0.9rem;
+  margin-top: 0.5em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 5%;
+}
+
+/* 📱 Media Queries para dispositivos pequeños */
+@media (max-width: 768px) {
+  form {
+      max-width: 90%;
+      padding: 8%;
   }
-  
-  .form-group {
-    margin-bottom: 20px; /* Más espacio entre grupos */
+
+  h1 {
+      font-size: 1.8rem;
   }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px; /* Aumenta el margen inferior */
-    font-size: 1.1rem; /* Aumenta el tamaño del texto del label */
-  }
-  
+
   input[type&#x3D;&quot;text&quot;],
   input[type&#x3D;&quot;email&quot;],
   textarea {
-    width: 100%;
-    padding: 12px; /* Más padding para inputs */
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem; /* Aumenta el tamaño del texto */
+      padding: 1em;
+      font-size: 1rem;
   }
-  
+
   button[type&#x3D;&quot;submit&quot;] {
-    padding: 15px 20px; /* Más padding en el botón */
-    background-color: #007bff;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 1.1rem; /* Aumenta el tamaño del texto */
+      font-size: 1rem;
+      padding: 0.8em 1.2em;
   }
-  
-  button[type&#x3D;&quot;submit&quot;]:hover:not(:disabled) {
-    background-color: #0056b3;
-  }
-  
-  button[type&#x3D;&quot;submit&quot;]:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-  }
-  
-  .error-message {
-    color: #d9534f;
-    font-size: 0.9rem; /* Ajusta el tamaño de las notificaciones de error */
-    margin-top: 5px;
-  }
-  
-  h1 {
-    text-align: center;
-    font-size: 2rem; /* Aumenta el tamaño del título */
-    margin-bottom: 20px;
-  }
-  
-  form {
-    margin-bottom: 10%; 
-    margin-top: 10%; 
-    margin-bottom: 17%;
-  }
-  </code></pre>
+}
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  margin-top: 10px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  width: 0%;
+  transition: width 0.2s ease;
+}
+
+.error-message {
+  color: red;
+  margin-top: 10px;
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">
@@ -946,7 +996,7 @@ export class FormulariodriverComponent {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="descarga-container">  <!-- Formulario para la descarga de drivers -->  <form (ngSubmit)="descargarDriver()" #driverForm="ngForm" class="form">    <!-- Título del formulario -->    <h1>Descargar Drivers de Tarjetas Gráficas</h1>    <!-- Selección del modelo de tarjeta gráfica -->    <div class="form-group">      <label for="modelo">Modelo de Tarjeta Gráfica NVIDIA</label>      <select        id="modelo"        class="form-control"        [(ngModel)]="modeloSeleccionado"        name="modelo"        required      >        <!-- Opción por defecto -->        <option value="" disabled selected>Selecciona el modelo</option>        <!-- Opciones disponibles para seleccionar el modelo de tarjeta gráfica -->        <option value="rtx3090">GeForce RTX 3090</option>        <option value="rtx3080">GeForce RTX 3080</option>        <option value="rtx3070">GeForce RTX 3070</option>        <option value="rtx3060">GeForce RTX 3060</option>        <option value="gtx1660">GeForce GTX 1660</option>        <option value="gtx1650">GeForce GTX 1650</option>        <option value="gtx1050">GeForce GTX 1050</option>      </select>    </div>    <!-- Selección del sistema operativo -->    <div class="form-group">      <label for="sistema">Sistema Operativo</label>      <select        id="sistema"        class="form-control"        [(ngModel)]="sistemaOperativoSeleccionado"        name="sistema"        required      >        <!-- Opción por defecto -->        <option value="" disabled selected>Selecciona el sistema operativo</option>        <!-- Opciones disponibles para seleccionar el sistema operativo -->        <option value="windows">Windows</option>        <option value="linux">Linux</option>        <option value="macos">MacOS</option>      </select>    </div>    <!-- Botón de envío (descarga) -->    <div class="form-group">      <button        type="submit"        class="btn btn-primary"        [disabled]="!modeloSeleccionado || !sistemaOperativoSeleccionado"      >        Descargar Driver      </button>    </div>  </form>  <!-- Mensaje de error si ocurre un problema -->  <div *ngIf="error" class="error-message">    <p>{{ error }}</p>  </div></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="descarga-container">  <!-- Formulario para la descarga de drivers -->  <form (ngSubmit)="descargarDriver()" #driverForm="ngForm" class="form">    <!-- Título del formulario -->    <h1>Descargar Drivers de Tarjetas Gráficas</h1>    <!-- Selección del modelo de tarjeta gráfica -->    <div class="form-group">      <label for="modelo">Modelo de Tarjeta Gráfica NVIDIA</label>      <select        id="modelo"        class="form-control"        [(ngModel)]="modeloSeleccionado"        name="modelo"        required      >        <!-- Opción por defecto -->        <option value="" disabled selected>Selecciona el modelo</option>        <!-- Opciones disponibles para seleccionar el modelo de tarjeta gráfica -->        <option value="rtx3090">GeForce RTX 3090</option>        <option value="rtx3080">GeForce RTX 3080</option>        <option value="rtx3070">GeForce RTX 3070</option>        <option value="rtx3060">GeForce RTX 3060</option>        <option value="gtx1660">GeForce GTX 1660</option>        <option value="gtx1650">GeForce GTX 1650</option>        <option value="gtx1050">GeForce GTX 1050</option>      </select>    </div><!-- Selección del sistema operativo --><div class="form-group">  <label for="sistema">Sistema Operativo</label>  <select    id="sistema"    class="form-control"    [(ngModel)]="sistemaOperativoSeleccionado"    name="sistema"    required  >    <!-- Opción por defecto -->    <option value="" disabled selected>Selecciona el sistema operativo</option>    <!-- Opciones disponibles para seleccionar el sistema operativo -->    <option value="windows">Windows</option>    <option value="linux">Linux</option>    <option value="macos">MacOS</option>  </select></div>    <!-- Botón de envío (descarga) -->    <div class="form-group">      <button        type="submit"        class="btn btn-primary"        [disabled]="!modeloSeleccionado || !sistemaOperativoSeleccionado"      >        Descargar Driver      </button>    </div>  </form>  <!-- Mensaje de error si ocurre un problema -->  <div *ngIf="error" class="error-message">    <p>{{ error }}</p>  </div></div></div>'
     var COMPONENTS = [{'name': 'AboutComponent', 'selector': 'app-about'},{'name': 'AlbunComponent', 'selector': 'app-albun'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CarouselComponent', 'selector': 'app-carousel'},{'name': 'DescargaprincipalComponent', 'selector': 'app-descargaprincipal'},{'name': 'FeauturesComponent', 'selector': 'app-feautures'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'FormulariodriverComponent', 'selector': 'app-formulariodriver'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsageComponent', 'selector': 'app-newsage'},{'name': 'NewsCarrouselComponent', 'selector': 'app-news-carrousel'},{'name': 'SupportFormComponent', 'selector': 'app-support-form'},{'name': 'SupportpageComponent', 'selector': 'app-supportpage'},{'name': 'TeamComponent', 'selector': 'app-team'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'FormulariodriverComponent'};

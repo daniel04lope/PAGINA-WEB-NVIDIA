@@ -12,6 +12,14 @@
   overflow: hidden;
   margin-left: 5%;
 }
+.carousel-item svg image {
+  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 .carousel-item{
   
  

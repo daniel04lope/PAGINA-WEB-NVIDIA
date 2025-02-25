@@ -278,12 +278,28 @@ export class DescargaprincipalComponent {
                     <code>./descargaprincipal.component.css</code>
                 </p>
                 <pre class="line-numbers"><code class="language-scss">div {
-    background: url(&#x27;../../../../assets/fondodescarga.jpg&#x27;) no-repeat center center fixed; /* Imagen de fondo */
-    background-size: cover; /* Ajusta la imagen para que ocupe todo el fondo */
-    margin: 0; /* Elimina márgenes del body si hay espacios blancos */
-    height: 100vh; /* Asegúrate de que el fondo cubra toda la altura de la ventana */
+  background: url(&#x27;../../../../assets/fondodescarga.jpg&#x27;) no-repeat center center fixed; 
+  background-size: cover; /* La imagen se ajusta para cubrir toda la pantalla */
+  margin: 0;
+  height: 100vh; /* Ocupa el 100% de la altura de la pantalla */
+  width: 100%; /* Asegura que cubra el ancho completo */
+}
+
+/* 📱 Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  div {
+      background-attachment: scroll; /* Evita problemas con el fondo fijo en móviles */
+      background-size: contain; /* Hace que la imagen se ajuste sin cortarse */
   }
-  </code></pre>
+}
+
+/* 🖥️ Media Query para pantallas muy grandes (4K, monitores anchos) */
+@media (min-width: 1600px) {
+  div {
+      background-size: cover; /* Mantiene la cobertura en pantallas grandes */
+  }
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="tree">

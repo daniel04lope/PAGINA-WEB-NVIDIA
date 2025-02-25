@@ -65,33 +65,12 @@
   </div>
 </div>
 
-<!--
-  @description Modal para mostrar los detalles de la noticia seleccionada.
-  @condition Se muestra solo si showModal es verdadero.
--->
-<div *ngIf="showModal" class="modal-overlay">
-  <div class="modal-content">
-    <!--
-      @description Botón para cerrar el modal.
-      @event (click) - Llama a closeNewsModal() para cerrar el modal.
-    -->
-    <button class="close-button" (click)="closeNewsModal()">X</button>
-    
-    <!--
-      @description Título de la noticia seleccionada.
-      @binding selectedNewsItem?.description - Muestra el título de la noticia en el modal.
-    -->
+<!-- Modal para mostrar los detalles de la noticia -->
+<div *ngIf="showModal" class="modal-overlay" (click)="closeNewsModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <!-- Se elimina el botón de cierre -->
     <h2>{{ selectedNewsItem?.description }}</h2>
-    
-    <!--
-      @description Imagen asociada a la noticia seleccionada.
-      @binding selectedNewsItem?.imageUrl - Fuente de la imagen mostrada en el modal.
-    -->
     <img [src]="selectedNewsItem?.imageUrl" alt="Imagen de la noticia" class="modal-image">
-    
-    <!--
-      @description Información adicional de la noticia, incluyendo el tiempo transcurrido y la descripción completa.
-    -->
     <p><strong>Publicado hace:</strong> {{ selectedNewsItem?.time }}</p>
     <p><strong>Descripción completa:</strong></p>
     <p>{{ selectedNewsItem?.fullDescription }}</p>

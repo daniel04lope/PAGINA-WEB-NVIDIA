@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
-// Componente raíz de la aplicación
-import { AppComponent } from '../app.component';
-
-// Componente del formulario de soporte
+// Componentes utilizados en el módulo
 import { SupportFormComponent } from './Components/support-form/support-form.component';
+import { SupportpageComponent } from './Pages/supportpage/supportpage.component';
 
 /**
  * @module SupportModule
@@ -25,25 +23,30 @@ import { SupportFormComponent } from './Components/support-form/support-form.com
  * export class SupportModule {}
  * ```
  */
+const routes: Routes = [
+  {
+    path: '',
+    component: SupportpageComponent, // Ruta principal que carga la página de soporte
+  }
+];
+
+/**
+ * @NgModule
+ * Módulo dedicado a gestionar los formularios de soporte.
+ * Contiene la configuración necesaria para la correcta funcionalidad del formulario de soporte.
+ */
 @NgModule({
   declarations: [
-    // Aquí se declaran los componentes que forman parte de este módulo
-    // Por ahora no se declara ningún componente directamente en el módulo
-    // ya que está importando el componente SupportFormComponent
+   
   ],
   imports: [
-    // Módulos necesarios para este módulo
-    // `SupportFormComponent` - Importado para que el formulario de soporte funcione correctamente
-    SupportFormComponent,
-    CommonModule, // Módulo común de Angular con directivas y pipes básicos
-    BrowserModule, // Módulo necesario para aplicaciones que se ejecutan en el navegador
-    ReactiveFormsModule // Módulo para formularios reactivos, necesario para crear formularios dinámicos
+    /**
+     * Módulos necesarios para este módulo
+     */
+    CommonModule, // Proporciona directivas y pipes comunes de Angular
+    RouterModule.forChild(routes), // Configura el enrutamiento específico de este módulo
+    ReactiveFormsModule, // Permite el uso de formularios reactivos
   ],
+  exports: [RouterModule], // Exporta el RouterModule para que las rutas sean accesibles
 })
-export class SupportModule {
-  /**
-   * @description
-   * Módulo dedicado a gestionar los formularios de soporte.
-   * Contiene la configuración necesaria para la correcta funcionalidad del formulario de soporte.
-   */
-}
+export class SupportModule {}

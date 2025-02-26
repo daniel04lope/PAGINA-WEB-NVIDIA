@@ -131,16 +131,64 @@
     <div class="tab-pane fade  tab-source-code" id="source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
 import { CommonModule } from &#x27;@angular/common&#x27;;
+import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+import { HomeComponent } from &#x27;./Pages/home/home.component&#x27;;
 
+/**
+ * @module MainPageModule
+ * @description
+ * Este módulo gestiona la página principal de la aplicación. Contiene las rutas necesarias para mostrar 
+ * la pantalla principal, como el componente &#x60;HomeComponent&#x60;, que es la página principal de la aplicación.
+ * El módulo está configurado para cargarse de manera perezosa (Lazy Loading).
+ */
+const routes: Routes &#x3D; [
+  /**
+   * Ruta principal del módulo
+   * @path &#x27;&#x27;
+   * @component HomeComponent
+   * Esta es la ruta predeterminada del módulo. Al acceder a la ruta vacía (&#x27;&#x27;) se cargará el componente &#x60;HomeComponent&#x60;.
+   */
+  { path: &#x27;&#x27;, component: HomeComponent } // Importante: debe ser vacío (&#x27;&#x27;) para Lazy Loading
+];
 
-
+/**
+ * Módulo de la página principal (Main Page).
+ * Este módulo se utiliza para configurar la página inicial de la aplicación, cargando el componente &#x60;HomeComponent&#x60;.
+ */
 @NgModule({
+  /**
+   * Declaraciones del módulo. En este caso, no se declaran componentes porque la carga es perezosa y solo se gestionan las rutas.
+   */
   declarations: [],
+
   imports: [
-    CommonModule
+    /**
+     * &#x60;CommonModule&#x60; proporciona directivas comunes de Angular como &#x60;ngIf&#x60; y &#x60;ngFor&#x60;, utilizadas en el módulo.
+     */
+    CommonModule,
+
+    /**
+     * &#x60;RouterModule.forChild(routes)&#x60; configura el sistema de enrutamiento para este módulo. 
+     * Permite la carga de las rutas específicas del módulo, en este caso la ruta de la página principal.
+     */
+    RouterModule.forChild(routes),
+  ],
+
+  exports: [
+    /**
+     * Exporta &#x60;RouterModule&#x60; para hacer las rutas disponibles fuera de este módulo.
+     * Esto permite que las rutas definidas en este módulo sean accesibles en otras partes de la aplicación.
+     */
+    RouterModule
   ]
 })
-export class MainPageModule { }
+export class MainPageModule { 
+  /**
+   * @constructor
+   * El constructor está vacío, ya que no hay dependencias inyectadas directamente en este módulo.
+   */
+  constructor() { }
+}
 </code></pre>
     </div>
 </div>

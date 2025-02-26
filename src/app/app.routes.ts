@@ -11,24 +11,13 @@ import { DescargaprincipalComponent } from './downloads/Pages/descargaprincipal/
 
 // Definición de las rutas de la aplicación
 export const routes: Routes = [
-  
-  // Ruta por defecto, redirige a la página de inicio cuando la URL está vacía
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent }, // Mantén Home sin Lazy Loading si es la página principal
 
-  // Ruta para la página de inicio
-  { path: 'home', component: HomeComponent },
+  { path: 'about', loadChildren: () => import('./aboutus/aboutus.module').then(m => m.AboutusModule) },
+  { path: 'support', loadChildren: () => import('./support/support.module').then(m => m.SupportModule) },
+  { path: 'news', loadChildren: () => import('./news/news.module').then(m => m.NewsModule) },
+  { path: 'downloads', loadChildren: () => import('./downloads/downloads.module').then(m => m.DownloadsModule) },
 
-  // Ruta para la página "Acerca de"
-  { path: 'about', component: AboutComponent },
-
-  { path: 'support', component: SupportpageComponent },
-
-  // Ruta para la página de noticias
-  { path: 'news', component: NewsageComponent },
-
-  { path: 'downloads', component: DescargaprincipalComponent },
-
-  // Ruta comodín: redirige a la página de inicio en caso de que la URL no coincida con ninguna ruta definida
-  { path: '**', redirectTo: '', pathMatch: 'full' } // Redirige a la página de inicio para rutas no encontradas
-
+  { path: '**', redirectTo: '', pathMatch: 'full' } // Redirige a Home si la ruta no existe
 ];
+

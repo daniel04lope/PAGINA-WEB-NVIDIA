@@ -84,87 +84,96 @@
 p{text-align: justify;}
 /* Modal y estilos existentes */
 /* Contenedor del modal: ocupa toda la pantalla con fondo semi-transparente */
+/* Fondo del modal con desenfoque (Glassmorphism) */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5); /* Oscurece un poco el fondo */
+  backdrop-filter: blur(8px); /* Desenfoque en el fondo */
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  padding: 10px; /* Reduce el padding en pantallas pequeñas */
-}
-
-/* Estilos del modal */
-.modal-content {
-  background: white;
   padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 90%;      /* Se ajusta automáticamente al tamaño de la pantalla */
-  max-width: 600px; /* Máximo tamaño en pantallas grandes */
-  max-height: 90vh; /* No sobrepasa el 90% del alto de la pantalla */
-  overflow-y: auto; /* Permite desplazamiento interno si el contenido es muy grande */
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-  position: relative;
 }
 
-/* Imagen dentro del modal */
+/* Contenedor del modal */
+.modal-content {
+  background: rgba(255, 255, 255, 0.9); /* Fondo semi-transparente */
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: 90%;
+  max-width: 550px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  backdrop-filter: blur(15px); /* Efecto de vidrio esmerilado */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Imagen con bordes redondeados y sombra */
 .modal-image {
   width: 100%;
   height: auto;
-  max-height: 300px; /* Evita que imágenes grandes sobresalgan */
-  object-fit: contain; /* Mantiene la proporción de la imagen */
-  border-radius: 5px;
-  margin-bottom: 15px;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
 }
 
-/* Botón de cierre */
+/* Texto dentro del modal con fuente más moderna */
+.modal-content p {
+  margin: 12px 0;
+  font-size: 18px;
+  line-height: 1.7;
+  text-align: justify;
+  color: #333; /* Color más tenue */
+  font-family: 'Poppins', sans-serif; /* Fuente más moderna */
+}
+
+/* Botón de cierre con diseño minimalista */
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background: red;
-  color: white;
-  border: none;
-  padding: 8px 15px;
+  top: 15px;
+  right: 15px;
+  background: transparent;
+  color: #ff4d4d;
+  border: 2px solid #ff4d4d;
+  padding: 5px 10px;
   cursor: pointer;
-  font-size: 18px;
-  border-radius: 100%;
-  transition: background 0.3s ease;
+  font-size: 20px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
 
 .close-button:hover {
-  background: darkred;
+  background: #ff4d4d;
+  color: white;
+  transform: scale(1.1);
 }
 
-/* Texto dentro del modal */
-.modal-content p {
-  margin: 15px 0;
-  font-size: 18px;
-  line-height: 1.6;
-  text-align: justify;
-}
-
-/* **Media Query para pantallas pequeñas (móviles y tablets)** */
+/* **Media Query para mejorar en móviles** */
 @media (max-width: 768px) {
   .modal-content {
-    width: 95%;      /* Ocupa casi toda la pantalla */
-    max-width: none; /* Elimina el ancho máximo */
-    padding: 15px;   /* Reduce el padding para mayor espacio */
+    width: 95%;
+    max-height: 90vh;
+    padding: 20px;
   }
 
   .modal-image {
-    max-height: 250px; /* Reduce el tamaño de la imagen en móviles */
+    max-height: 200px;
   }
 
   .close-button {
-    top: 5px;
-    right: 5px;
+    top: 10px;
+    right: 10px;
     font-size: 16px;
-    padding: 5px 10px;
+    padding: 4px 8px;
   }
 }

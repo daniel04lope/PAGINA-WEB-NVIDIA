@@ -24,13 +24,13 @@
 <title>cluster_DownloadsModule</title>
 <polygon fill="none" stroke="black" stroke-dasharray="1,5" points="42.5,-70 42.5,-268 453.5,-268 453.5,-70 42.5,-70"/>
 </g>
-<g id="clust4" class="cluster">
-<title>cluster_DownloadsModule_exports</title>
-<polygon fill="none" stroke="black" points="146.5,-208 146.5,-260 348.5,-260 348.5,-208 146.5,-208"/>
-</g>
 <g id="clust3" class="cluster">
 <title>cluster_DownloadsModule_imports</title>
 <polygon fill="none" stroke="black" points="50.5,-78 50.5,-130 445.5,-130 445.5,-78 50.5,-78"/>
+</g>
+<g id="clust4" class="cluster">
+<title>cluster_DownloadsModule_exports</title>
+<polygon fill="none" stroke="black" points="146.5,-208 146.5,-260 348.5,-260 348.5,-208 146.5,-208"/>
 </g>
 <!-- DescargaprincipalComponent -->
 <g id="node1" class="node">

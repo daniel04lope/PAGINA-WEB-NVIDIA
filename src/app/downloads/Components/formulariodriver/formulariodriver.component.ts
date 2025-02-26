@@ -73,7 +73,7 @@ export class FormulariodriverComponent {
       'gtx1650-macos': '1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe',
       'gtx1050-windows': '1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe',
       'gtx1050-linux': '1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe',
-      'gtx1050-macos': '1OpQ-btgMnMZQ33fCH-PrjB9R06MgfrGe',
+      'gtx1050-macos': '1EyXSmEpICqh_p3PrpBnPplVO1J0A8IF2',
     };
 
     return fileMap[`${modelo.toLowerCase()}-${sistema.toLowerCase()}`] || null;
